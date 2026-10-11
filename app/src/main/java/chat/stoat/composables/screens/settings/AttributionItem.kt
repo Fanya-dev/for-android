@@ -9,13 +9,13 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.core.net.toUri
-import chat.stoat.R
 import chat.stoat.screens.about.Library
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_open_in_new_24dp
 import chat.stoat.shared.resources.oss_attribution_open_library_website
 import chat.stoat.shared.resources.oss_attribution_tap_to_view_license
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -37,7 +37,7 @@ fun AttributionItem(library: Library, onClick: () -> Unit) {
                     customTab.launchUrl(context, website.toUri())
                 }) {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_open_in_new_24dp),
+                        painter = painterResource(Res.drawable.ic_open_in_new_24dp),
                         contentDescription = stringResource(Res.string.oss_attribution_open_library_website)
                     )
                 }

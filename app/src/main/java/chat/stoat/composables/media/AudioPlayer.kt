@@ -30,16 +30,17 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.StoatHttp
 import chat.stoat.composables.LocalSnackbarHostState
 import chat.stoat.composables.generic.ControlledSlider
 import chat.stoat.internals.extensions.blockSwipeReplyOnHorizontalDrag
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_more_vert_24dp
+import chat.stoat.shared.resources.ic_pause_24dp__fill
+import chat.stoat.shared.resources.ic_play_arrow_24dp__fill
 import chat.stoat.shared.resources.media_viewer_more
 import chat.stoat.shared.resources.media_viewer_pause
 import chat.stoat.shared.resources.media_viewer_play
@@ -50,6 +51,7 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.readRawBytes
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -189,12 +191,12 @@ fun AudioPlayer(
                 } else {
                     if (playback.isPlaying.value) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_pause_24dp__fill),
+                            painter = painterResource(Res.drawable.ic_pause_24dp__fill),
                             contentDescription = stringResource(Res.string.media_viewer_pause)
                         )
                     } else {
                         Icon(
-                            painter = painterResource(R.drawable.ic_play_arrow_24dp__fill),
+                            painter = painterResource(Res.drawable.ic_play_arrow_24dp__fill),
                             contentDescription = stringResource(Res.string.media_viewer_play)
                         )
                     }
@@ -222,7 +224,7 @@ fun AudioPlayer(
                 showMenu.value = !showMenu.value
             }) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_more_vert_24dp),
+                    painter = painterResource(Res.drawable.ic_more_vert_24dp),
                     contentDescription = stringResource(Res.string.media_viewer_more)
                 )
                 DropdownMenu(

@@ -27,11 +27,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import chat.stoat.R
+import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_home_24dp
+import chat.stoat.shared.resources.ic_menu_24dp
+import chat.stoat.shared.resources.ic_play_arrow_24dp
+import org.jetbrains.compose.resources.painterResource
 
 enum class LabsHomeScreenTab {
     Home,
@@ -56,7 +60,7 @@ fun LabsHomeScreen(navController: NavController, topNav: NavController) {
                         topNav.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = "Back"
                         )
                     }
@@ -70,7 +74,7 @@ fun LabsHomeScreen(navController: NavController, topNav: NavController) {
                     onClick = { currentTab.value = LabsHomeScreenTab.Home },
                     icon = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_home_24dp),
+                            painter = painterResource(Res.drawable.ic_home_24dp),
                             contentDescription = null,
                         )
                     },
@@ -83,7 +87,7 @@ fun LabsHomeScreen(navController: NavController, topNav: NavController) {
                     onClick = { currentTab.value = LabsHomeScreenTab.Mockups },
                     icon = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_menu_24dp),
+                            painter = painterResource(Res.drawable.ic_menu_24dp),
                             contentDescription = null,
                         )
                     },
@@ -96,7 +100,7 @@ fun LabsHomeScreen(navController: NavController, topNav: NavController) {
                     onClick = { currentTab.value = LabsHomeScreenTab.Sandboxes },
                     icon = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_play_arrow_24dp),
+                            painter = painterResource(Res.drawable.ic_play_arrow_24dp),
                             contentDescription = null,
                         )
                     },

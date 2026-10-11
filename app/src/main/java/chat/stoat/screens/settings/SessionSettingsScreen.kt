@@ -37,7 +37,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -45,7 +44,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.auth.fetchAllSessions
 import chat.stoat.api.routes.auth.logoutAllSessions
@@ -56,6 +54,7 @@ import chat.stoat.composables.markdown.prose.UIMarkdown
 import chat.stoat.composables.settings.sessions.SessionItem
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import chat.stoat.shared.resources.logout
 import chat.stoat.shared.resources.settings_sessions
 import chat.stoat.shared.resources.settings_sessions_log_out_other
@@ -67,6 +66,7 @@ import chat.stoat.shared.resources.settings_sessions_other_sessions
 import chat.stoat.shared.resources.settings_sessions_this_device
 import chat.stoat.shared.resources.settings_sessions_this_device_unavailable
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 class SessionSettingsScreenViewModel : ViewModel() {
@@ -165,7 +165,7 @@ fun SessionSettingsScreen(
                         navController.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }

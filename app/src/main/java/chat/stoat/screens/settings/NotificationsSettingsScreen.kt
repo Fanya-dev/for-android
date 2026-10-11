@@ -18,7 +18,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
@@ -27,7 +26,6 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.routes.push.subscribePush
 import chat.stoat.api.routes.push.unsubscribePush
 import chat.stoat.composables.generic.CenteredListItem
@@ -35,6 +33,7 @@ import chat.stoat.dialogs.NotificationRationaleDialog
 import chat.stoat.persistence.KVStorage
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_arrow_forward_24dp
 import chat.stoat.shared.resources.settings_notifications
 import chat.stoat.shared.resources.settings_notifications_push
 import chat.stoat.shared.resources.settings_notifications_push_description
@@ -43,6 +42,7 @@ import chat.stoat.shared.resources.settings_notifications_system_description
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.firebase.messaging.FirebaseMessaging
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -175,7 +175,7 @@ fun NotificationsSettingsScreen(
             supportingContent = { Text(stringResource(Res.string.settings_notifications_system_description)) },
             trailingContent = {
                 Icon(
-                    painter = painterResource(R.drawable.ic_arrow_forward_24dp),
+                    painter = painterResource(Res.drawable.ic_arrow_forward_24dp),
                     contentDescription = null,
                     modifier = Modifier.padding(horizontal = 16.dp)
                 )

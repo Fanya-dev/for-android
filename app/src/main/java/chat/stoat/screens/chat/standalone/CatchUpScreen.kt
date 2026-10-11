@@ -30,21 +30,21 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.core.model.schemas.ChannelUnread
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
 import chat.stoat.shared.resources.catch_up
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import logcat.LogPriority
 import logcat.logcat
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 sealed class CatchUpCard {
@@ -139,7 +139,7 @@ fun CatchUpScreen(navController: NavController, viewModel: CatchUpScreenViewMode
                         navController.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }

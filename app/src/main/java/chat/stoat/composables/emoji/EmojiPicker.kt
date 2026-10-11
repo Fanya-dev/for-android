@@ -54,12 +54,10 @@ import androidx.compose.ui.graphics.SolidColor
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalView
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.callbacks.Action
 import chat.stoat.callbacks.ActionChannel
@@ -81,8 +79,20 @@ import chat.stoat.shared.resources.emoji_picker_skin_tone_fitzpatrick_4
 import chat.stoat.shared.resources.emoji_picker_skin_tone_fitzpatrick_5
 import chat.stoat.shared.resources.emoji_picker_skin_tone_fitzpatrick_6
 import chat.stoat.shared.resources.emoji_picker_skin_tone_none
+import chat.stoat.shared.resources.ic_bus_railway_24dp
+import chat.stoat.shared.resources.ic_close_24dp
+import chat.stoat.shared.resources.ic_emoji_nature_24dp
+import chat.stoat.shared.resources.ic_emoji_objects_24dp
+import chat.stoat.shared.resources.ic_emoji_people_24dp
+import chat.stoat.shared.resources.ic_emoji_symbols_24dp
+import chat.stoat.shared.resources.ic_flag_24dp
+import chat.stoat.shared.resources.ic_keyboard_arrow_right_24dp
+import chat.stoat.shared.resources.ic_mood_24dp
+import chat.stoat.shared.resources.ic_sports_and_outdoors_24dp
+import chat.stoat.shared.resources.ic_sports_bar_24dp
 import chat.stoat.shared.resources.unknown
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -239,7 +249,7 @@ fun EmojiPicker(
                     innerTextField()
 
                     Icon(
-                        painter = painterResource(R.drawable.ic_close_24dp),
+                        painter = painterResource(Res.drawable.ic_close_24dp),
                         contentDescription = stringResource(Res.string.emoji_picker_clear_search),
                         modifier = Modifier
                             .clip(CircleShape)
@@ -351,7 +361,7 @@ fun EmojiPicker(
                         textAlign = TextAlign.Center
                     )
                     Icon(
-                        painter = painterResource(R.drawable.ic_keyboard_arrow_right_24dp),
+                        painter = painterResource(Res.drawable.ic_keyboard_arrow_right_24dp),
                         contentDescription = stringResource(
                             Res.string.emoji_picker_close_skin_tone_menu
                         ),
@@ -453,39 +463,39 @@ fun EmojiPicker(
                         Icon(
                             painter = when (category) {
                                 UnicodeEmojiSection.Smileys -> painterResource(
-                                    R.drawable.ic_mood_24dp
+                                    Res.drawable.ic_mood_24dp
                                 )
 
                                 UnicodeEmojiSection.People -> painterResource(
-                                    R.drawable.ic_emoji_people_24dp
+                                    Res.drawable.ic_emoji_people_24dp
                                 )
 
                                 UnicodeEmojiSection.Animals -> painterResource(
-                                    R.drawable.ic_emoji_nature_24dp
+                                    Res.drawable.ic_emoji_nature_24dp
                                 )
 
                                 UnicodeEmojiSection.Food -> painterResource(
-                                    R.drawable.ic_sports_bar_24dp
+                                    Res.drawable.ic_sports_bar_24dp
                                 )
 
                                 UnicodeEmojiSection.Travel -> painterResource(
-                                    R.drawable.ic_bus_railway_24dp
+                                    Res.drawable.ic_bus_railway_24dp
                                 )
 
                                 UnicodeEmojiSection.Activities -> painterResource(
-                                    R.drawable.ic_sports_and_outdoors_24dp
+                                    Res.drawable.ic_sports_and_outdoors_24dp
                                 )
 
                                 UnicodeEmojiSection.Objects -> painterResource(
-                                    R.drawable.ic_emoji_objects_24dp
+                                    Res.drawable.ic_emoji_objects_24dp
                                 )
 
                                 UnicodeEmojiSection.Symbols -> painterResource(
-                                    R.drawable.ic_emoji_symbols_24dp
+                                    Res.drawable.ic_emoji_symbols_24dp
                                 )
 
                                 UnicodeEmojiSection.Flags -> painterResource(
-                                    R.drawable.ic_flag_24dp
+                                    Res.drawable.ic_flag_24dp
                                 )
                             },
                             contentDescription = null,

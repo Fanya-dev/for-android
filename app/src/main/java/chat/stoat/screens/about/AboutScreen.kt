@@ -36,7 +36,6 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.toClipEntry
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -48,7 +47,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
 import chat.stoat.BuildConfig
-import chat.stoat.R
 import chat.stoat.api.StoatJson
 import chat.stoat.api.routes.misc.getRootRoute
 import chat.stoat.core.model.data.STOAT_BASE
@@ -63,9 +61,13 @@ import chat.stoat.shared.resources.about_section_debug_information_copy_as_json
 import chat.stoat.shared.resources.about_section_debug_information_description
 import chat.stoat.shared.resources.about_section_oss_licenses
 import chat.stoat.shared.resources.copied
+import chat.stoat.shared.resources.ic_chevron_forward_24dp
+import chat.stoat.shared.resources.ic_content_copy_24dp
+import chat.stoat.shared.resources.stoat_logo_white
 import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import java.net.URI
 
@@ -129,7 +131,7 @@ fun AboutScreen(navController: NavController, viewModel: AboutViewModel = viewMo
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Image(
-                    painter = painterResource(R.drawable.stoat_logo_white),
+                    painter = painterResource(Res.drawable.stoat_logo_white),
                     contentDescription = stringResource(Res.string.about_full_name),
                     colorFilter = ColorFilter.tint(LocalContentColor.current),
                     modifier = Modifier
@@ -191,7 +193,7 @@ fun AboutScreen(navController: NavController, viewModel: AboutViewModel = viewMo
                     }
                     Spacer(Modifier.weight(1f))
                     Icon(
-                        painter = painterResource(R.drawable.ic_chevron_forward_24dp),
+                        painter = painterResource(Res.drawable.ic_chevron_forward_24dp),
                         contentDescription = null,
                         tint = LocalContentColor.current.copy(alpha = 0.5f),
                         modifier = Modifier.rotate(debugInfoChevronRotation)
@@ -258,7 +260,7 @@ fun AboutScreen(navController: NavController, viewModel: AboutViewModel = viewMo
                                 }
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_content_copy_24dp),
+                                    painter = painterResource(Res.drawable.ic_content_copy_24dp),
                                     contentDescription = null
                                 )
 
@@ -299,7 +301,7 @@ fun AboutScreen(navController: NavController, viewModel: AboutViewModel = viewMo
                     }
                     Spacer(Modifier.weight(1f))
                     Icon(
-                        painter = painterResource(R.drawable.ic_chevron_forward_24dp),
+                        painter = painterResource(Res.drawable.ic_chevron_forward_24dp),
                         contentDescription = null,
                         tint = LocalContentColor.current.copy(alpha = 0.5f)
                     )

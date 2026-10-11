@@ -68,7 +68,6 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.view.WindowCompat
@@ -87,7 +86,6 @@ import androidx.media3.ui.compose.state.rememberPlayPauseButtonState
 import androidx.media3.ui.compose.state.rememberProgressStateWithTickInterval
 import androidx.media3.ui.compose.state.rememberSeekBackButtonState
 import androidx.media3.ui.compose.state.rememberSeekForwardButtonState
-import chat.stoat.R
 import chat.stoat.api.StoatHttp
 import chat.stoat.api.StoatJson
 import chat.stoat.api.settings.LoadedSettings
@@ -99,6 +97,15 @@ import chat.stoat.internals.extensions.zero
 import chat.stoat.providers.getAttachmentContentUri
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_download_24dp
+import chat.stoat.shared.resources.ic_forward_5_24dp
+import chat.stoat.shared.resources.ic_fullscreen_24dp
+import chat.stoat.shared.resources.ic_fullscreen_exit_24dp
+import chat.stoat.shared.resources.ic_ios_share_24dp
+import chat.stoat.shared.resources.ic_pause_24dp__fill
+import chat.stoat.shared.resources.ic_play_arrow_24dp__fill
+import chat.stoat.shared.resources.ic_replay_5_24dp
 import chat.stoat.shared.resources.media_viewer_exit_fullscreen
 import chat.stoat.shared.resources.media_viewer_fullscreen
 import chat.stoat.shared.resources.media_viewer_open
@@ -119,7 +126,9 @@ import io.ktor.client.request.get
 import io.ktor.client.statement.readRawBytes
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.time.Duration.Companion.seconds
 
@@ -337,7 +346,7 @@ fun VideoViewScreen(resource: AutumnResource, onClose: () -> Unit = {}) {
                         navigationIcon = {
                             IconButton(onClick = onClose) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                    painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                     contentDescription = stringResource(Res.string.back)
                                 )
                             }
@@ -345,7 +354,7 @@ fun VideoViewScreen(resource: AutumnResource, onClose: () -> Unit = {}) {
                         actions = {
                             IconButton(onClick = { shareSubmenuIsOpen = true }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_ios_share_24dp),
+                                    painter = painterResource(Res.drawable.ic_ios_share_24dp),
                                     contentDescription = stringResource(Res.string.share)
                                 )
                             }
@@ -366,7 +375,7 @@ fun VideoViewScreen(resource: AutumnResource, onClose: () -> Unit = {}) {
 
                             IconButton(onClick = ::saveToGallery) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_download_24dp),
+                                    painter = painterResource(Res.drawable.ic_download_24dp),
                                     contentDescription = stringResource(Res.string.media_viewer_save)
                                 )
                             }
@@ -477,7 +486,7 @@ private fun StoatVideoPlayer(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     VideoControlButton(
-                        icon = R.drawable.ic_replay_5_24dp,
+                        icon = Res.drawable.ic_replay_5_24dp,
                         contentDescription = stringResource(Res.string.media_viewer_seek_back),
                         enabled = seekBackState.isEnabled,
                         onClick = {
@@ -504,9 +513,9 @@ private fun StoatVideoPlayer(
                         Icon(
                             painter = painterResource(
                                 if (playPauseState.showPlay) {
-                                    R.drawable.ic_play_arrow_24dp__fill
+                                    Res.drawable.ic_play_arrow_24dp__fill
                                 } else {
-                                    R.drawable.ic_pause_24dp__fill
+                                    Res.drawable.ic_pause_24dp__fill
                                 }
                             ),
                             contentDescription = stringResource(
@@ -524,7 +533,7 @@ private fun StoatVideoPlayer(
                     Spacer(Modifier.width(24.dp))
 
                     VideoControlButton(
-                        icon = R.drawable.ic_forward_5_24dp,
+                        icon = Res.drawable.ic_forward_5_24dp,
                         contentDescription = stringResource(Res.string.media_viewer_seek_forward),
                         enabled = seekForwardState.isEnabled,
                         onClick = {
@@ -607,7 +616,7 @@ private fun StoatVideoPlayer(
 
 @Composable
 private fun VideoControlButton(
-    icon: Int,
+    icon: DrawableResource,
     contentDescription: String,
     enabled: Boolean,
     onClick: () -> Unit
@@ -691,9 +700,9 @@ private fun VideoTimeline(
             Icon(
                 painter = painterResource(
                     if (isFullscreen) {
-                        R.drawable.ic_fullscreen_exit_24dp
+                        Res.drawable.ic_fullscreen_exit_24dp
                     } else {
-                        R.drawable.ic_fullscreen_24dp
+                        Res.drawable.ic_fullscreen_24dp
                     }
                 ),
                 contentDescription = stringResource(

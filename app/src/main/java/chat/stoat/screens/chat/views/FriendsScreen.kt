@@ -69,7 +69,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.graphics.vector.rememberVectorPainter
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.isTraversalGroup
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.traversalIndex
@@ -85,7 +84,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.internals.FriendRequests
 import chat.stoat.api.internals.UserQR
 import chat.stoat.api.internals.UserQRContents
@@ -127,6 +125,11 @@ import chat.stoat.shared.resources.friends_scan_qr_result_sheet_invalid_title
 import chat.stoat.shared.resources.friends_scan_qr_result_sheet_missing_permission_description
 import chat.stoat.shared.resources.friends_scan_qr_result_sheet_missing_permission_title
 import chat.stoat.shared.resources.friends_scan_qr_result_sheet_success_title
+import chat.stoat.shared.resources.ic_group_add_24dp
+import chat.stoat.shared.resources.ic_menu_24dp
+import chat.stoat.shared.resources.ic_more_vert_24dp
+import chat.stoat.shared.resources.ic_qr_code_scanner_24dp
+import chat.stoat.shared.resources.ic_tag_24dp
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.status_online
@@ -135,6 +138,7 @@ import io.github.g00fy2.quickie.QRResult
 import io.github.g00fy2.quickie.ScanQRCode
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 private fun showInvalidClipboardToast(context: Context) {
@@ -589,7 +593,7 @@ fun FriendsScreen(topNav: NavController, useDrawer: Boolean, onDrawerClicked: ()
                                 onDrawerClicked()
                             }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_menu_24dp),
+                                    painter = painterResource(Res.drawable.ic_menu_24dp),
                                     contentDescription = stringResource(Res.string.menu)
                                 )
                             }
@@ -600,7 +604,7 @@ fun FriendsScreen(topNav: NavController, useDrawer: Boolean, onDrawerClicked: ()
                             overflowMenuShown = true
                         }) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_more_vert_24dp),
+                                painter = painterResource(Res.drawable.ic_more_vert_24dp),
                                 contentDescription = stringResource(Res.string.menu)
                             )
                         }
@@ -854,7 +858,7 @@ fun FriendsScreen(topNav: NavController, useDrawer: Boolean, onDrawerClicked: ()
                     },
                     icon = {
                         Icon(
-                            painterResource(R.drawable.ic_group_add_24dp),
+                            painterResource(Res.drawable.ic_group_add_24dp),
                             contentDescription = null
                         )
                     },
@@ -868,7 +872,7 @@ fun FriendsScreen(topNav: NavController, useDrawer: Boolean, onDrawerClicked: ()
                     },
                     icon = {
                         Icon(
-                            painterResource(R.drawable.ic_qr_code_scanner_24dp),
+                            painterResource(Res.drawable.ic_qr_code_scanner_24dp),
                             contentDescription = null
                         )
                     },
@@ -882,7 +886,7 @@ fun FriendsScreen(topNav: NavController, useDrawer: Boolean, onDrawerClicked: ()
                     },
                     icon = {
                         Icon(
-                            painterResource(R.drawable.ic_tag_24dp),
+                            painterResource(Res.drawable.ic_tag_24dp),
                             contentDescription = null
                         )
                     },

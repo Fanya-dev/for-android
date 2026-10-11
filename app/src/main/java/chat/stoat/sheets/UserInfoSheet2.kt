@@ -43,13 +43,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.api.HitRateLimitException
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
@@ -75,6 +73,9 @@ import chat.stoat.core.model.schemas.Profile
 import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.internals.server.canManageServerRole
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_badge_24dp
+import chat.stoat.shared.resources.ic_error_24dp
+import chat.stoat.shared.resources.ic_psychology_alt_24dp
 import chat.stoat.shared.resources.rate_limit_toast
 import chat.stoat.shared.resources.unknown
 import chat.stoat.shared.resources.user_info_sheet_category_badges
@@ -93,6 +94,7 @@ import chat.stoat.ui.colour.solidColor
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import androidx.compose.ui.semantics.Role as SemanticsRole
 
@@ -184,7 +186,7 @@ fun UserInfoSheet2(
             NonIdealState(
                 icon = {
                     Icon(
-                        painter = painterResource(R.drawable.ic_error_24dp),
+                        painter = painterResource(Res.drawable.ic_error_24dp),
                         contentDescription = null,
                         modifier = Modifier.size(it)
                     )
@@ -288,7 +290,7 @@ fun UserInfoSheet2(
                             onClick = { showServerIdentityOptions = true },
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_psychology_alt_24dp),
+                                painter = painterResource(Res.drawable.ic_psychology_alt_24dp),
                                 contentDescription = null
                             )
                         }
@@ -299,7 +301,7 @@ fun UserInfoSheet2(
                             onClick = { showUserCard = true },
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_badge_24dp),
+                                painter = painterResource(Res.drawable.ic_badge_24dp),
                                 contentDescription = null
                             )
                         }
@@ -539,7 +541,7 @@ fun UserInfoSheet2(
                                 )
                             } ?: run {
                                 Icon(
-                                    painter = painterResource(id = R.drawable.ic_error_24dp),
+                                    painter = painterResource(Res.drawable.ic_error_24dp),
                                     contentDescription = null
                                 )
                                 Spacer(modifier = Modifier.width(8.dp))
@@ -559,7 +561,7 @@ fun UserInfoSheet2(
                         NonIdealState(
                             icon = {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_error_24dp),
+                                    painter = painterResource(Res.drawable.ic_error_24dp),
                                     contentDescription = null,
                                     modifier = Modifier.size(24.dp)
                                 )

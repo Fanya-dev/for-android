@@ -28,10 +28,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.user.acceptFriendRequest
 import chat.stoat.api.routes.user.blockUser
@@ -50,6 +48,16 @@ import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.internals.server.serverIdentityCapabilities
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.copied
+import chat.stoat.shared.resources.ic_block_24dp
+import chat.stoat.shared.resources.ic_flag_24dp
+import chat.stoat.shared.resources.ic_gavel_24dp
+import chat.stoat.shared.resources.ic_id_card_24dp
+import chat.stoat.shared.resources.ic_identifier_copy_24dp
+import chat.stoat.shared.resources.ic_more_vert_24dp
+import chat.stoat.shared.resources.ic_person_off_24dp
+import chat.stoat.shared.resources.ic_smart_toy_24dp
+import chat.stoat.shared.resources.ic_sports_and_outdoors_24dp
+import chat.stoat.shared.resources.ic_timer_24dp
 import chat.stoat.shared.resources.member_moderation_ban
 import chat.stoat.shared.resources.member_moderation_kick
 import chat.stoat.shared.resources.member_moderation_timeout
@@ -74,6 +82,7 @@ import logcat.LogPriority
 import logcat.asLog
 import logcat.logcat
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -178,7 +187,7 @@ fun UserButtons(
                             .weight(1f)
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_smart_toy_24dp),
+                            painter = painterResource(Res.drawable.ic_smart_toy_24dp),
                             contentDescription = null
                         )
                         Text(
@@ -325,7 +334,7 @@ fun UserButtons(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_person_off_24dp),
+                                        painter = painterResource(Res.drawable.ic_person_off_24dp),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.onSurface
                                     )
@@ -353,7 +362,7 @@ fun UserButtons(
                             },
                             leadingIcon = {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_block_24dp),
+                                    painter = painterResource(Res.drawable.ic_block_24dp),
                                     contentDescription = null,
                                     tint = MaterialTheme.colorScheme.onSurface
                                 )
@@ -377,7 +386,7 @@ fun UserButtons(
                         },
                         leadingIcon = {
                             Icon(
-                                painter = painterResource(R.drawable.ic_identifier_copy_24dp),
+                                painter = painterResource(Res.drawable.ic_identifier_copy_24dp),
                                 contentDescription = null,
                                 tint = MaterialTheme.colorScheme.onSurface
                             )
@@ -398,7 +407,7 @@ fun UserButtons(
                         },
                         leadingIcon = {
                             Icon(
-                                painter = painterResource(R.drawable.ic_flag_24dp),
+                                painter = painterResource(Res.drawable.ic_flag_24dp),
                                 contentDescription = null,
                                 tint = MaterialTheme.colorScheme.error
                             )
@@ -428,7 +437,7 @@ fun UserButtons(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_id_card_24dp),
+                                        painter = painterResource(Res.drawable.ic_id_card_24dp),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.onSurface
                                     )
@@ -457,7 +466,7 @@ fun UserButtons(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_timer_24dp),
+                                        painter = painterResource(Res.drawable.ic_timer_24dp),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.error
                                     )
@@ -479,7 +488,7 @@ fun UserButtons(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_sports_and_outdoors_24dp),
+                                        painter = painterResource(Res.drawable.ic_sports_and_outdoors_24dp),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.error
                                     )
@@ -501,7 +510,7 @@ fun UserButtons(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_gavel_24dp),
+                                        painter = painterResource(Res.drawable.ic_gavel_24dp),
                                         contentDescription = null,
                                         tint = MaterialTheme.colorScheme.error
                                     )
@@ -521,7 +530,7 @@ fun UserButtons(
                     }
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_more_vert_24dp),
+                        painter = painterResource(Res.drawable.ic_more_vert_24dp),
                         contentDescription = stringResource(Res.string.menu)
                     )
                 }

@@ -32,7 +32,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.autofill.ContentType
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentType
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -44,7 +43,6 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.account.EmailPasswordAssessment
 import chat.stoat.api.routes.account.negotiateAuthentication
@@ -57,6 +55,8 @@ import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
 import chat.stoat.shared.resources.email
 import chat.stoat.shared.resources.hide_password
+import chat.stoat.shared.resources.ic_visibility_24dp
+import chat.stoat.shared.resources.ic_visibility_off_24dp
 import chat.stoat.shared.resources.login
 import chat.stoat.shared.resources.login_heading
 import chat.stoat.shared.resources.password
@@ -67,6 +67,7 @@ import chat.stoat.shared.resources.show_password
 import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -260,14 +261,14 @@ fun LoginScreen(navController: NavController, viewModel: LoginViewModel = koinVi
                             when {
                                 showPassword.value -> {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_visibility_off_24dp),
+                                        painter = painterResource(Res.drawable.ic_visibility_off_24dp),
                                         contentDescription = stringResource(Res.string.hide_password)
                                     )
                                 }
 
                                 else -> {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_visibility_24dp),
+                                        painter = painterResource(Res.drawable.ic_visibility_24dp),
                                         contentDescription = stringResource(Res.string.show_password)
                                     )
                                 }

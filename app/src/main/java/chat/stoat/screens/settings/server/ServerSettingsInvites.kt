@@ -51,7 +51,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalClipboard
 import androidx.compose.ui.platform.toClipEntry
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -60,7 +59,6 @@ import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
 import chat.stoat.api.internals.hasPermission
@@ -80,6 +78,10 @@ import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.screens.settings.SettingsListItem
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_content_copy_24dp
+import chat.stoat.shared.resources.ic_link_24dp
+import chat.stoat.shared.resources.ic_tag_24dp
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.server_settings_invites
 import chat.stoat.shared.resources.server_settings_invites_add
@@ -112,6 +114,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.sync.Semaphore
 import kotlinx.coroutines.sync.withPermit
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
@@ -400,7 +403,7 @@ fun ServerSettingsInvites(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_add_24dp),
+                        painter = painterResource(Res.drawable.ic_add_24dp),
                         contentDescription = stringResource(Res.string.server_settings_invites_add),
                     )
                 }
@@ -506,7 +509,7 @@ private fun InviteList(
         } else if (invites.isEmpty()) {
             item(key = "empty") {
                 ServerSettingsEmptyState(
-                    icon = R.drawable.ic_link_24dp,
+                    icon = Res.drawable.ic_link_24dp,
                     title = Res.string.server_settings_invites_empty_title,
                     description = Res.string.server_settings_invites_empty,
                 )
@@ -702,7 +705,7 @@ private fun CreateInviteSheet(
                             },
                             leadingContent = {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_tag_24dp),
+                                    painter = painterResource(Res.drawable.ic_tag_24dp),
                                     contentDescription = null,
                                 )
                             },
@@ -801,7 +804,7 @@ private fun InviteLink(link: String, copyableLink: String) {
             overflow = TextOverflow.Ellipsis
         )
         Icon(
-            painter = painterResource(R.drawable.ic_content_copy_24dp),
+            painter = painterResource(Res.drawable.ic_content_copy_24dp),
             contentDescription = stringResource(Res.string.server_settings_invites_copy),
         )
     }

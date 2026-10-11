@@ -24,12 +24,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.custom.fetchEmoji
 import chat.stoat.core.model.schemas.Emoji
@@ -43,8 +41,10 @@ import chat.stoat.shared.resources.copied
 import chat.stoat.shared.resources.copy
 import chat.stoat.shared.resources.emote_info_from_server
 import chat.stoat.shared.resources.emote_info_from_server_unknown
+import chat.stoat.shared.resources.ic_content_copy_24dp
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -113,7 +113,7 @@ fun EmoteInfoSheet(id: String, onDismiss: () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(R.drawable.ic_content_copy_24dp),
+                painter = painterResource(Res.drawable.ic_content_copy_24dp),
                 contentDescription = null
             )
         },

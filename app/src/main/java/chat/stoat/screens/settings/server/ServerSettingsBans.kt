@@ -51,7 +51,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
 import chat.stoat.api.internals.hasPermission
@@ -66,6 +65,7 @@ import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_gavel_24dp
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.server_settings_bans
 import chat.stoat.shared.resources.server_settings_bans_banned_by
@@ -332,7 +332,7 @@ private fun BanList(
         } else if (entries.isEmpty()) {
             item(key = "empty") {
                 ServerSettingsEmptyState(
-                    icon = R.drawable.ic_gavel_24dp,
+                    icon = Res.drawable.ic_gavel_24dp,
                     title = Res.string.server_settings_bans_empty_title,
                     description = Res.string.server_settings_bans_empty_description,
                 )

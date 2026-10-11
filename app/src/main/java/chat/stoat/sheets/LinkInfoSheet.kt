@@ -20,19 +20,20 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.composables.generic.SheetButton
 import chat.stoat.internals.Platform
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.copied
 import chat.stoat.shared.resources.copy
+import chat.stoat.shared.resources.ic_content_copy_24dp
+import chat.stoat.shared.resources.ic_open_in_browser_24dp
 import chat.stoat.shared.resources.link_open
 import chat.stoat.shared.resources.link_type_no_intent
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -88,7 +89,7 @@ fun LinkInfoSheet(url: String, onDismiss: () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(R.drawable.ic_open_in_browser_24dp),
+                painter = painterResource(Res.drawable.ic_open_in_browser_24dp),
                 contentDescription = null
             )
         },
@@ -119,7 +120,7 @@ fun LinkInfoSheet(url: String, onDismiss: () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(R.drawable.ic_content_copy_24dp),
+                painter = painterResource(Res.drawable.ic_content_copy_24dp),
                 contentDescription = null
             )
         },

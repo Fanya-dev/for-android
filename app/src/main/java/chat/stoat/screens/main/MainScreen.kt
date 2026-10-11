@@ -13,14 +13,18 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.screens.chat.views.OverviewScreen
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_forum_24dp
+import chat.stoat.shared.resources.ic_forum_24dp__fill
+import chat.stoat.shared.resources.ic_star_shine_24dp
+import chat.stoat.shared.resources.ic_star_shine_24dp__fill
+import chat.stoat.shared.resources.ic_tag_24dp
 import chat.stoat.shared.resources.main_tab_communities
 import chat.stoat.shared.resources.main_tab_conversations
 import chat.stoat.shared.resources.main_tab_overview
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class MainScreenTab {
@@ -42,7 +46,7 @@ fun MainScreen(navController: NavController) {
                     icon = {
                         Icon(
                             painter = painterResource(
-                                R.drawable.ic_tag_24dp
+                                Res.drawable.ic_tag_24dp
                             ),
                             contentDescription = null,
                         )
@@ -58,9 +62,9 @@ fun MainScreen(navController: NavController) {
                         Icon(
                             painter = painterResource(
                                 if (currentTab == MainScreenTab.Conversations) {
-                                    R.drawable.ic_forum_24dp__fill
+                                    Res.drawable.ic_forum_24dp__fill
                                 } else {
-                                    R.drawable.ic_forum_24dp
+                                    Res.drawable.ic_forum_24dp
                                 }
                             ),
                             contentDescription = null,
@@ -77,9 +81,9 @@ fun MainScreen(navController: NavController) {
                         Icon(
                             painter = painterResource(
                                 if (currentTab == MainScreenTab.Overview) {
-                                    R.drawable.ic_star_shine_24dp__fill
+                                    Res.drawable.ic_star_shine_24dp__fill
                                 } else {
-                                    R.drawable.ic_star_shine_24dp
+                                    Res.drawable.ic_star_shine_24dp
                                 }
                             ),
                             contentDescription = null,

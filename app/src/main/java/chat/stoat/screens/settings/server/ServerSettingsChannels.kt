@@ -63,7 +63,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.customActions
 import androidx.compose.ui.semantics.semantics
@@ -75,7 +74,6 @@ import androidx.compose.ui.zIndex
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
 import chat.stoat.api.internals.ULID
@@ -99,6 +97,15 @@ import chat.stoat.screens.settings.SettingsListItem
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_delete_24dp
+import chat.stoat.shared.resources.ic_drag_handle_24dp
+import chat.stoat.shared.resources.ic_edit_24dp
+import chat.stoat.shared.resources.ic_grid_3x3_24dp
+import chat.stoat.shared.resources.ic_list_24dp
+import chat.stoat.shared.resources.ic_more_vert_24dp
+import chat.stoat.shared.resources.ic_tag_24dp
+import chat.stoat.shared.resources.ic_volume_up_24dp
 import chat.stoat.shared.resources.retry
 import chat.stoat.shared.resources.server_settings_channels
 import chat.stoat.shared.resources.server_settings_channels_add_title
@@ -140,6 +147,7 @@ import chat.stoat.shared.resources.server_settings_channels_voice_channel
 import chat.stoat.shared.resources.server_settings_channels_voice_description
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
@@ -497,7 +505,7 @@ fun ServerSettingsChannels(
                 },
                 leadingContent = {
                     SettingsIcon {
-                        Icon(painterResource(R.drawable.ic_tag_24dp), contentDescription = null)
+                        Icon(painterResource(Res.drawable.ic_tag_24dp), contentDescription = null)
                     }
                 },
                 modifier = Modifier.clickable {
@@ -521,7 +529,7 @@ fun ServerSettingsChannels(
                 leadingContent = {
                     SettingsIcon {
                         Icon(
-                            painterResource(R.drawable.ic_volume_up_24dp),
+                            painterResource(Res.drawable.ic_volume_up_24dp),
                             contentDescription = null
                         )
                     }
@@ -553,7 +561,7 @@ fun ServerSettingsChannels(
                     leadingContent = {
                         SettingsIcon {
                             Icon(
-                                painterResource(R.drawable.ic_list_24dp),
+                                painterResource(Res.drawable.ic_list_24dp),
                                 contentDescription = null
                             )
                         }
@@ -693,7 +701,7 @@ fun ServerSettingsChannels(
                     }
                 ) {
                     Icon(
-                        painterResource(R.drawable.ic_add_24dp),
+                        painterResource(Res.drawable.ic_add_24dp),
                         contentDescription = stringResource(
                             Res.string.server_settings_channels_add_title
                         )
@@ -766,7 +774,7 @@ fun ServerSettingsChannels(
             if (!hasChannelLayoutItems) {
                 item(key = "empty") {
                     ServerSettingsEmptyState(
-                        icon = R.drawable.ic_grid_3x3_24dp,
+                        icon = Res.drawable.ic_grid_3x3_24dp,
                         title = Res.string.server_settings_channels_empty_title,
                         description = Res.string.server_settings_channels_empty_description,
                     )
@@ -1235,7 +1243,7 @@ private fun ChannelSectionRow(
             },
             leadingContent = {
                 Icon(
-                    painterResource(R.drawable.ic_list_24dp),
+                    painterResource(Res.drawable.ic_list_24dp),
                     contentDescription = null
                 )
             },
@@ -1244,7 +1252,7 @@ private fun ChannelSectionRow(
                     Box {
                         IconButton(enabled = enabled, onClick = { menuExpanded = true }) {
                             Icon(
-                                painterResource(R.drawable.ic_more_vert_24dp),
+                                painterResource(Res.drawable.ic_more_vert_24dp),
                                 contentDescription = stringResource(
                                     Res.string.server_settings_channels_category_actions
                                 )
@@ -1264,7 +1272,7 @@ private fun ChannelSectionRow(
                                 },
                                 leadingIcon = {
                                     Icon(
-                                        painterResource(R.drawable.ic_add_24dp),
+                                        painterResource(Res.drawable.ic_add_24dp),
                                         contentDescription = null
                                     )
                                 },
@@ -1284,7 +1292,7 @@ private fun ChannelSectionRow(
                                     },
                                     leadingIcon = {
                                         Icon(
-                                            painterResource(R.drawable.ic_edit_24dp),
+                                            painterResource(Res.drawable.ic_edit_24dp),
                                             contentDescription = null
                                         )
                                     },
@@ -1306,7 +1314,7 @@ private fun ChannelSectionRow(
                                     },
                                     leadingIcon = {
                                         Icon(
-                                            painterResource(R.drawable.ic_delete_24dp),
+                                            painterResource(Res.drawable.ic_delete_24dp),
                                             contentDescription = null,
                                             tint = MaterialTheme.colorScheme.error
                                         )
@@ -1433,7 +1441,7 @@ private fun ReorderDragHandle(
         onClick = {}
     ) {
         Icon(
-            painterResource(R.drawable.ic_drag_handle_24dp),
+            painterResource(Res.drawable.ic_drag_handle_24dp),
             contentDescription = contentDescription
         )
     }

@@ -55,7 +55,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.font.FontWeight
@@ -65,7 +64,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.BitDefaults
@@ -96,6 +94,8 @@ import chat.stoat.internals.server.withPermission
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_check_24dp
+import chat.stoat.shared.resources.ic_delete_24dp
 import chat.stoat.shared.resources.server_identity_retry
 import chat.stoat.shared.resources.server_settings_role
 import chat.stoat.shared.resources.server_settings_role_appearance
@@ -141,6 +141,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -536,7 +537,7 @@ fun ServerSettingsRoleEditor(
                         CircularProgressIndicator(Modifier.size(24.dp), strokeWidth = 2.dp)
                     } else {
                         Icon(
-                            painterResource(R.drawable.ic_check_24dp),
+                            painterResource(Res.drawable.ic_check_24dp),
                             contentDescription = stringResource(Res.string.server_settings_role_save),
                         )
                     }
@@ -648,7 +649,7 @@ fun ServerSettingsRoleEditor(
                     .fillMaxWidth()
                     .padding(horizontal = 16.dp),
             ) {
-                Icon(painterResource(R.drawable.ic_delete_24dp), contentDescription = null)
+                Icon(painterResource(Res.drawable.ic_delete_24dp), contentDescription = null)
                 Text(
                     stringResource(Res.string.server_settings_role_delete),
                     modifier = Modifier.padding(start = 8.dp),

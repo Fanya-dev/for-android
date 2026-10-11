@@ -58,7 +58,6 @@ import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalResources
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
@@ -71,7 +70,6 @@ import androidx.core.net.toUri
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.routes.account.MfaSettings
 import chat.stoat.api.routes.account.disableTotp
 import chat.stoat.api.routes.account.enableTotp
@@ -92,6 +90,7 @@ import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
 import chat.stoat.shared.resources.copied
+import chat.stoat.shared.resources.ic_content_copy_24dp
 import chat.stoat.shared.resources.settings_mfa
 import chat.stoat.shared.resources.settings_mfa_disable_totp
 import chat.stoat.shared.resources.settings_mfa_disable_totp_cta
@@ -130,6 +129,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -561,7 +561,7 @@ private fun TotpEnrollmentSheet(
                     }
                 }) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_content_copy_24dp),
+                        painter = painterResource(Res.drawable.ic_content_copy_24dp),
                         contentDescription = stringResource(Res.string.settings_mfa_totp_setup_copy_secret)
                     )
                 }

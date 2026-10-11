@@ -30,13 +30,11 @@ import androidx.compose.ui.graphics.asAndroidBitmap
 import androidx.compose.ui.graphics.rememberGraphicsLayer
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import chat.stoat.BuildConfig
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.core.model.schemas.User
 import chat.stoat.composables.profile.UserCard
@@ -44,6 +42,8 @@ import chat.stoat.internals.Platform
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.copied
 import chat.stoat.shared.resources.copy
+import chat.stoat.shared.resources.ic_content_copy_24dp
+import chat.stoat.shared.resources.ic_ios_share_24dp
 import chat.stoat.shared.resources.share
 import chat.stoat.shared.resources.user_card_error_sharing
 import chat.stoat.shared.resources.user_card_tap_to_copy
@@ -51,6 +51,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import java.io.File
 import java.io.FileOutputStream
@@ -216,7 +217,7 @@ fun UserCardSheet(user: User?) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_ios_share_24dp),
+                        painter = painterResource(Res.drawable.ic_ios_share_24dp),
                         contentDescription = null
                     )
                     Spacer(modifier = Modifier.width(8.dp))
@@ -236,7 +237,7 @@ fun UserCardSheet(user: User?) {
                     modifier = Modifier.weight(1f)
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_content_copy_24dp),
+                        painter = painterResource(Res.drawable.ic_content_copy_24dp),
                         contentDescription = null
                     )
                     Spacer(modifier = Modifier.width(8.dp))

@@ -47,7 +47,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontStyle
@@ -57,7 +56,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.net.toUri
-import chat.stoat.R
 import chat.stoat.activities.media.ImageViewActivity
 import chat.stoat.activities.media.VideoViewActivity
 import chat.stoat.api.StoatAPI
@@ -85,9 +83,13 @@ import chat.stoat.core.model.schemas.User
 import chat.stoat.core.model.schemas.UserBadges
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.edited
+import chat.stoat.shared.resources.ic_add_reaction_24dp
+import chat.stoat.shared.resources.ic_block_24dp
+import chat.stoat.shared.resources.ic_edit_24dp
 import chat.stoat.shared.resources.message_blocked
 import chat.stoat.shared.resources.message_context_sheet_actions_react
 import chat.stoat.shared.resources.unknown
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import chat.stoat.core.model.schemas.has as hasUserBadge
 import chat.stoat.internals.text.Gigamoji
@@ -338,7 +340,7 @@ fun Message(
                         modifier = Modifier.padding(vertical = 8.dp)
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_block_24dp),
+                            painter = painterResource(Res.drawable.ic_block_24dp),
                             contentDescription = null
                         )
 
@@ -498,7 +500,7 @@ fun Message(
 
                                 if (message.edited != null) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_edit_24dp),
+                                        painter = painterResource(Res.drawable.ic_edit_24dp),
                                         contentDescription = stringResource(Res.string.edited),
                                         tint = MaterialTheme.colorScheme.onBackground.copy(
                                             alpha = 0.5f
@@ -700,7 +702,7 @@ fun Message(
                                         .padding(8.dp)
                                 ) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_add_reaction_24dp),
+                                        painter = painterResource(Res.drawable.ic_add_reaction_24dp),
                                         contentDescription = stringResource(Res.string.message_context_sheet_actions_react),
                                         modifier = Modifier.size(16.dp)
                                     )

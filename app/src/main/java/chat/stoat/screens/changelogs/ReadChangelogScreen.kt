@@ -28,14 +28,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.routes.microservices.gazette.GazetteChangelog
 import chat.stoat.api.routes.microservices.gazette.getChangelogById
 import chat.stoat.composables.markdown.prose.ProseMarkdown
@@ -44,6 +42,7 @@ import chat.stoat.shared.resources.back
 import chat.stoat.shared.resources.changelog_header
 import chat.stoat.shared.resources.changelog_load_error
 import chat.stoat.shared.resources.changelog_retry
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import chat.stoat.shared.resources.unknown
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.MutableSharedFlow
@@ -54,6 +53,7 @@ import kotlinx.coroutines.flow.flatMapLatest
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.flow.stateIn
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import java.time.Instant
 import java.time.ZoneId
@@ -147,7 +147,7 @@ fun ReadChangelogScreen(
                 navigationIcon = {
                     IconButton(onClick = { navController.popBackStack() }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }

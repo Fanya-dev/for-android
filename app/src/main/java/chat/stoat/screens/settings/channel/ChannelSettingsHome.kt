@@ -33,11 +33,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
 import chat.stoat.api.internals.hasPermission
@@ -57,7 +55,12 @@ import chat.stoat.shared.resources.channel_settings_delete_confirm_yes
 import chat.stoat.shared.resources.channel_settings_header
 import chat.stoat.shared.resources.channel_settings_overview
 import chat.stoat.shared.resources.channel_settings_permissions
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_delete_24dp
+import chat.stoat.shared.resources.ic_info_24dp
+import chat.stoat.shared.resources.ic_page_info_24dp
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -123,7 +126,7 @@ fun ChannelSettingsHome(navController: NavController, channelId: String) {
                         navController.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }
@@ -155,7 +158,7 @@ fun ChannelSettingsHome(navController: NavController, channelId: String) {
                             leadingContent = {
                                 SettingsIcon {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_info_24dp),
+                                        painter = painterResource(Res.drawable.ic_info_24dp),
                                         contentDescription = null,
                                     )
                                 }
@@ -181,7 +184,7 @@ fun ChannelSettingsHome(navController: NavController, channelId: String) {
                             leadingContent = {
                                 SettingsIcon {
                                     Icon(
-                                        painter = painterResource(id = R.drawable.ic_page_info_24dp),
+                                        painter = painterResource(Res.drawable.ic_page_info_24dp),
                                         contentDescription = null,
                                     )
                                 }
@@ -208,7 +211,7 @@ fun ChannelSettingsHome(navController: NavController, channelId: String) {
                             leadingContent = {
                                 SettingsIcon(danger = true) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_delete_24dp),
+                                        painter = painterResource(Res.drawable.ic_delete_24dp),
                                         contentDescription = null,
                                     )
                                 }

@@ -106,7 +106,6 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextRange
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -115,7 +114,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.core.content.ContextCompat
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenDp
 import chat.stoat.api.settings.Experiments
 import chat.stoat.composables.generic.RemoteImage
@@ -130,6 +128,11 @@ import chat.stoat.media.Recording
 import chat.stoat.media.VoiceRecorder
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.add_attachment_alt
+import chat.stoat.shared.resources.ic_campaign_24dp
+import chat.stoat.shared.resources.ic_edit_24dp
+import chat.stoat.shared.resources.ic_mic_24dp
+import chat.stoat.shared.resources.ic_mood_24dp
+import chat.stoat.shared.resources.ic_send_24dp
 import chat.stoat.shared.resources.message_field_placeholder_dm
 import chat.stoat.shared.resources.message_field_placeholder_group
 import chat.stoat.shared.resources.message_field_placeholder_notes
@@ -155,6 +158,7 @@ import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -816,7 +820,7 @@ fun MessageField(
                                 label = { Text("@${item.content}") },
                                 icon = {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_campaign_24dp),
+                                        painter = painterResource(Res.drawable.ic_campaign_24dp),
                                         contentDescription = null,
                                         modifier = Modifier
                                             .size(SuggestionChipDefaults.IconSize)
@@ -955,7 +959,7 @@ fun MessageField(
                     )
 
                     Icon(
-                        painter = painterResource(R.drawable.ic_mood_24dp),
+                        painter = painterResource(Res.drawable.ic_mood_24dp),
                         tint = voiceAuxiliaryContentColor,
                         contentDescription = stringResource(Res.string.pick_emoji_alt),
                         modifier = Modifier
@@ -1060,7 +1064,7 @@ fun MessageField(
                                 .testTag("voice_message")
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_mic_24dp),
+                                painter = painterResource(Res.drawable.ic_mic_24dp),
                                 tint = voiceMicContentColor,
                                 contentDescription = stringResource(Res.string.voice_message_start_recording),
                                 modifier = Modifier.size(24.dp)
@@ -1078,8 +1082,8 @@ fun MessageField(
                 ) {
                     Icon(
                         painter = when {
-                            editMode -> painterResource(R.drawable.ic_edit_24dp)
-                            else -> painterResource(R.drawable.ic_send_24dp)
+                            editMode -> painterResource(Res.drawable.ic_edit_24dp)
+                            else -> painterResource(Res.drawable.ic_send_24dp)
                         },
                         tint = if (sendEnabled) {
                             MaterialTheme.colorScheme.onPrimary

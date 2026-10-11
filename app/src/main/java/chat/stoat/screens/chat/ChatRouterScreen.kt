@@ -57,7 +57,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.core.app.NotificationManagerCompat
 import androidx.lifecycle.ViewModel
@@ -65,7 +64,6 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import chat.stoat.BuildConfig
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.DirectMessages
 import chat.stoat.api.realtime.DisconnectionState
@@ -98,6 +96,7 @@ import chat.stoat.screens.chat.views.channel.ChannelScreen
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.channel_link_invalid
 import chat.stoat.shared.resources.channel_link_invalid_description
+import chat.stoat.shared.resources.ic_lock_24dp
 import chat.stoat.shared.resources.notice_platform_mod_dm_acknowledge
 import chat.stoat.shared.resources.notice_platform_mod_dm_description
 import chat.stoat.shared.resources.notice_platform_mod_dm_title
@@ -124,6 +123,7 @@ import kotlinx.datetime.Clock
 import kotlinx.datetime.Instant
 import logcat.LogPriority
 import logcat.logcat
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -793,7 +793,7 @@ fun ChatRouterScreen(
             },
             icon = {
                 Icon(
-                    painter = painterResource(R.drawable.ic_lock_24dp),
+                    painter = painterResource(Res.drawable.ic_lock_24dp),
                     contentDescription = null, // decorative
                     tint = MaterialTheme.colorScheme.primary
                 )

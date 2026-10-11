@@ -46,7 +46,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.CustomAccessibilityAction
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.customActions
@@ -59,7 +58,6 @@ import androidx.compose.ui.zIndex
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.server.createServerRole
 import chat.stoat.api.routes.server.reorderServerRoles
@@ -73,6 +71,11 @@ import chat.stoat.internals.server.serverRoleCapabilities
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_chevron_forward_24dp
+import chat.stoat.shared.resources.ic_drag_handle_24dp
+import chat.stoat.shared.resources.ic_flag_24dp
+import chat.stoat.shared.resources.ic_group_24dp
 import chat.stoat.shared.resources.server_settings_roles
 import chat.stoat.shared.resources.server_settings_roles_above_you
 import chat.stoat.shared.resources.server_settings_roles_count
@@ -95,6 +98,7 @@ import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
@@ -323,7 +327,7 @@ fun ServerSettingsRoles(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_add_24dp),
+                        painter = painterResource(Res.drawable.ic_add_24dp),
                         contentDescription = stringResource(Res.string.server_settings_roles_create),
                     )
                 }
@@ -369,7 +373,7 @@ fun ServerSettingsRoles(
             if (displayedEntries.isEmpty()) {
                 item(key = "empty") {
                     ServerSettingsEmptyState(
-                        icon = R.drawable.ic_flag_24dp,
+                        icon = Res.drawable.ic_flag_24dp,
                         title = Res.string.server_settings_roles_empty_title,
                         description = Res.string.server_settings_roles_empty_description,
                     )
@@ -431,7 +435,7 @@ fun ServerSettingsRoles(
                                 ) {
                                     Icon(
                                         painter = painterResource(
-                                            R.drawable.ic_drag_handle_24dp
+                                            Res.drawable.ic_drag_handle_24dp
                                         ),
                                         contentDescription = stringResource(
                                             Res.string.server_settings_roles_reorder
@@ -522,7 +526,7 @@ fun ServerSettingsRoles(
                                 .size(24.dp),
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_group_24dp),
+                                painter = painterResource(Res.drawable.ic_group_24dp),
                                 contentDescription = null,
                             )
                         }
@@ -534,7 +538,7 @@ fun ServerSettingsRoles(
                                 .size(48.dp),
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_chevron_forward_24dp),
+                                painter = painterResource(Res.drawable.ic_chevron_forward_24dp),
                                 contentDescription = null,
                             )
                         }
@@ -624,7 +628,7 @@ private fun RoleListRow(
                 dragHandle()
             } else {
                 Icon(
-                    painter = painterResource(R.drawable.ic_chevron_forward_24dp),
+                    painter = painterResource(Res.drawable.ic_chevron_forward_24dp),
                     contentDescription = null,
                 )
             }

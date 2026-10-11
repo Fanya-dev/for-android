@@ -39,14 +39,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.autofill.ContentType
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentType
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.routes.account.MfaSettings
 import chat.stoat.api.routes.account.changeEmail
 import chat.stoat.api.routes.account.changePassword
@@ -54,6 +52,7 @@ import chat.stoat.api.routes.account.fetchAccount
 import chat.stoat.api.routes.account.fetchMfaSettings
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_edit_24dp
 import chat.stoat.shared.resources.settings_account
 import chat.stoat.shared.resources.settings_account_email
 import chat.stoat.shared.resources.settings_account_email_confirm_email
@@ -86,6 +85,7 @@ import chat.stoat.shared.resources.settings_account_password_edit_title
 import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -386,7 +386,7 @@ fun AccountSettingsScreen(
                                 modifier = Modifier.weight(1f)
                             )
                             Icon(
-                                painter = painterResource(R.drawable.ic_edit_24dp),
+                                painter = painterResource(Res.drawable.ic_edit_24dp),
                                 contentDescription = stringResource(Res.string.settings_account_email_edit_alt)
                             )
                         }
@@ -413,7 +413,7 @@ fun AccountSettingsScreen(
                                 modifier = Modifier.weight(1f)
                             )
                             Icon(
-                                painter = painterResource(R.drawable.ic_edit_24dp),
+                                painter = painterResource(Res.drawable.ic_edit_24dp),
                                 contentDescription = stringResource(Res.string.settings_account_password_edit_alt)
                             )
                         }

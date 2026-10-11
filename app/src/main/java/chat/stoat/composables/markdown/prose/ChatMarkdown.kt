@@ -293,10 +293,11 @@ fun ChatMarkdown(
             )
         )
     }
-    val codeSpanStyle = remember(fontSize, surfaceVariantColor) {
+    val codeFontFamily = FragmentMono
+    val codeSpanStyle = remember(fontSize, surfaceVariantColor, codeFontFamily) {
         SpanStyle(
             background = surfaceVariantColor,
-            fontFamily = FragmentMono,
+            fontFamily = codeFontFamily,
             fontSize = fontSize,
         )
     }

@@ -114,7 +114,6 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.Placeholder
 import androidx.compose.ui.text.PlaceholderVerticalAlign
 import androidx.compose.ui.text.buildAnnotatedString
@@ -129,7 +128,6 @@ import androidx.compose.ui.unit.em
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.documentfile.provider.DocumentFile
-import chat.stoat.R
 import chat.stoat.StoatApplication
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.api.StoatAPI
@@ -177,6 +175,18 @@ import chat.stoat.shared.resources.file_picker_chip_camera_failed
 import chat.stoat.shared.resources.file_picker_chip_camera_none_installed
 import chat.stoat.shared.resources.file_picker_chip_documents
 import chat.stoat.shared.resources.file_picker_chip_photo_picker
+import chat.stoat.shared.resources.ic_action_key_24dp
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_attach_file_24dp
+import chat.stoat.shared.resources.ic_call_24dp__fill
+import chat.stoat.shared.resources.ic_camera_24dp
+import chat.stoat.shared.resources.ic_close_24dp
+import chat.stoat.shared.resources.ic_edit_24dp
+import chat.stoat.shared.resources.ic_keyboard_arrow_right_24dp
+import chat.stoat.shared.resources.ic_menu_24dp
+import chat.stoat.shared.resources.ic_photo_library_24dp
+import chat.stoat.shared.resources.ic_search_24dp
+import chat.stoat.shared.resources.ic_south_24dp
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.message_failed_to_send
 import chat.stoat.shared.resources.message_field_editing_message
@@ -210,6 +220,7 @@ import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import kotlinx.datetime.Instant
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -874,7 +885,7 @@ fun ChannelScreen(
                                 }
 
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_keyboard_arrow_right_24dp),
+                                    painter = painterResource(Res.drawable.ic_keyboard_arrow_right_24dp),
                                     contentDescription = null,
                                     modifier = Modifier
                                         .size(16.dp)
@@ -888,7 +899,7 @@ fun ChannelScreen(
                         if (useDrawer) {
                             IconButton(onClick = onToggleDrawer) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_menu_24dp),
+                                    painter = painterResource(Res.drawable.ic_menu_24dp),
                                     contentDescription = stringResource(Res.string.menu)
                                 )
                             }
@@ -896,7 +907,7 @@ fun ChannelScreen(
                         if (useBackButton) {
                             IconButton(onClick = backButtonAction ?: {}) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                    painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                     contentDescription = stringResource(Res.string.back)
                                 )
                             }
@@ -919,7 +930,7 @@ fun ChannelScreen(
                                 }
                             }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_call_24dp__fill),
+                                    painter = painterResource(Res.drawable.ic_call_24dp__fill),
                                     contentDescription = stringResource(Res.string.voice_start_call)
                                 )
                             }
@@ -932,7 +943,7 @@ fun ChannelScreen(
                             }
                         }) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_search_24dp),
+                                painter = painterResource(Res.drawable.ic_search_24dp),
                                 contentDescription = stringResource(Res.string.channel_search)
                             )
                         }
@@ -1231,7 +1242,7 @@ fun ChannelScreen(
                                                     ) {
                                                         with(LocalDensity.current) {
                                                             Image(
-                                                                painterResource(R.drawable.ic_action_key_24dp),
+                                                                painterResource(Res.drawable.ic_action_key_24dp),
                                                                 contentDescription = null,
                                                                 colorFilter = ColorFilter.tint(
                                                                     LocalContentColor.current
@@ -1361,7 +1372,7 @@ fun ChannelScreen(
                                     containerColor = MaterialTheme.colorScheme.surfaceVariant
                                 ) {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_south_24dp),
+                                        painter = painterResource(Res.drawable.ic_south_24dp),
                                         contentDescription = stringResource(
                                             Res.string.scroll_to_bottom
                                         )
@@ -1522,7 +1533,7 @@ fun ChannelScreen(
                                                                 verticalAlignment = Alignment.CenterVertically
                                                             ) {
                                                                 Icon(
-                                                                    painter = painterResource(R.drawable.ic_edit_24dp),
+                                                                    painter = painterResource(Res.drawable.ic_edit_24dp),
                                                                     contentDescription = null,
                                                                     modifier = Modifier.size(20.dp)
                                                                 )
@@ -1533,7 +1544,7 @@ fun ChannelScreen(
                                                                     style = MaterialTheme.typography.labelLarge
                                                                 )
                                                                 Icon(
-                                                                    painter = painterResource(R.drawable.ic_close_24dp),
+                                                                    painter = painterResource(Res.drawable.ic_close_24dp),
                                                                     contentDescription = stringResource(
                                                                         Res.string.message_field_editing_message_cancel_alt
                                                                     ),
@@ -1641,7 +1652,7 @@ fun ChannelScreen(
                                                     DropdownMenuItem(
                                                         leadingIcon = {
                                                             Icon(
-                                                                painter = painterResource(R.drawable.ic_attach_file_24dp),
+                                                                painter = painterResource(Res.drawable.ic_attach_file_24dp),
                                                                 contentDescription = null // Provided by text below
                                                             )
                                                         },
@@ -1655,7 +1666,7 @@ fun ChannelScreen(
                                                     DropdownMenuItem(
                                                         leadingIcon = {
                                                             Icon(
-                                                                painter = painterResource(R.drawable.ic_camera_24dp),
+                                                                painter = painterResource(Res.drawable.ic_camera_24dp),
                                                                 contentDescription = null // Provided by text below
                                                             )
                                                         },
@@ -1669,7 +1680,7 @@ fun ChannelScreen(
                                                     DropdownMenuItem(
                                                         leadingIcon = {
                                                             Icon(
-                                                                painter = painterResource(R.drawable.ic_photo_library_24dp),
+                                                                painter = painterResource(Res.drawable.ic_photo_library_24dp),
                                                                 contentDescription = null // Provided by text below
                                                             )
                                                         },

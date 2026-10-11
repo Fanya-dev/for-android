@@ -23,14 +23,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.SolidColor
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.file_picker_chip_camera
 import chat.stoat.shared.resources.file_picker_chip_documents
 import chat.stoat.shared.resources.file_picker_chip_photo_picker
+import chat.stoat.shared.resources.ic_attach_file_24dp
+import chat.stoat.shared.resources.ic_camera_24dp
+import chat.stoat.shared.resources.ic_photo_library_24dp
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -70,7 +72,7 @@ fun MediaPickerGateway(
                         .padding(8.dp)
                 ) {
                     Icon(
-                        painterResource(R.drawable.ic_photo_library_24dp),
+                        painterResource(Res.drawable.ic_photo_library_24dp),
                         contentDescription = null,
                     )
                     Text(
@@ -106,7 +108,7 @@ fun MediaPickerGateway(
                         .padding(8.dp)
                 ) {
                     Icon(
-                        painterResource(R.drawable.ic_attach_file_24dp),
+                        painterResource(Res.drawable.ic_attach_file_24dp),
                         contentDescription = null,
                     )
                     Text(
@@ -130,7 +132,7 @@ fun MediaPickerGateway(
                         .padding(8.dp)
                 ) {
                     Icon(
-                        painterResource(R.drawable.ic_camera_24dp),
+                        painterResource(Res.drawable.ic_camera_24dp),
                         contentDescription = null,
                     )
                     Text(

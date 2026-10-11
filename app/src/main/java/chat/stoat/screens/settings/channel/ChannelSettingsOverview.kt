@@ -41,7 +41,6 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -49,7 +48,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.channel.patchChannel
@@ -77,8 +75,11 @@ import chat.stoat.shared.resources.channel_settings_overview_nsfw_undo_confirm_t
 import chat.stoat.shared.resources.channel_settings_overview_nsfw_undo_confirm_yes
 import chat.stoat.shared.resources.channel_settings_overview_save
 import chat.stoat.shared.resources.channel_settings_overview_update_info_error_fallback
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_check_24dp
 import io.ktor.http.ContentType
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -308,7 +309,7 @@ fun ChannelSettingsOverview(
                         navController.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }
@@ -323,7 +324,7 @@ fun ChannelSettingsOverview(
             ) {
                 FloatingActionButton(onClick = { viewModel.updateChannel() }) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_check_24dp),
+                        painter = painterResource(Res.drawable.ic_check_24dp),
                         contentDescription = stringResource(Res.string.channel_settings_overview_save)
                     )
                 }

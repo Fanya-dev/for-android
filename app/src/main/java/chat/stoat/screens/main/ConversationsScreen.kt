@@ -23,11 +23,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.core.model.schemas.ChannelType
 import chat.stoat.core.model.schemas.User
@@ -36,8 +34,10 @@ import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.internals.extensions.zero
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.channel_notes
+import chat.stoat.shared.resources.ic_keep_24dp
 import chat.stoat.shared.resources.main_tab_conversations
 import chat.stoat.shared.resources.reply_message_empty_has_attachments
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 // Note - this is not a traditional screen per se, as it is a part of the main screen
@@ -103,7 +103,7 @@ fun ConversationsScreen(navController: NavController) {
                                 }
                                 Badge {
                                     Icon(
-                                        painter = painterResource(R.drawable.ic_keep_24dp),
+                                        painter = painterResource(Res.drawable.ic_keep_24dp),
                                         contentDescription = null,
                                         modifier = Modifier.size(12.dp)
                                     )

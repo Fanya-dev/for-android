@@ -39,14 +39,12 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
@@ -60,6 +58,7 @@ import chat.stoat.core.model.schemas.Server
 import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_check_24dp
 import chat.stoat.shared.resources.server_settings_overview
 import chat.stoat.shared.resources.server_settings_overview_description_hint
 import chat.stoat.shared.resources.server_settings_overview_disabled
@@ -85,6 +84,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -424,7 +424,7 @@ fun ServerSettingsOverview(
                         )
                     } else {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check_24dp),
+                            painter = painterResource(Res.drawable.ic_check_24dp),
                             contentDescription = stringResource(
                                 Res.string.server_settings_overview_save
                             ),

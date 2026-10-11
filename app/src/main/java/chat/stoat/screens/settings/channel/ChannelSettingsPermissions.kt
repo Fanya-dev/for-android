@@ -37,7 +37,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -45,7 +44,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.BitDefaults
@@ -81,6 +79,8 @@ import chat.stoat.shared.resources.channel_settings_permissions_role_description
 import chat.stoat.shared.resources.channel_settings_permissions_save
 import chat.stoat.shared.resources.channel_settings_permissions_saved
 import chat.stoat.shared.resources.channel_settings_permissions_update_error
+import chat.stoat.shared.resources.ic_check_24dp
+import chat.stoat.shared.resources.ic_group_24dp
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.server_settings_role
 import chat.stoat.shared.resources.server_settings_role_discard
@@ -91,6 +91,7 @@ import kotlinx.coroutines.launch
 import kotlinx.datetime.Clock
 import org.jetbrains.compose.resources.StringResource
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 
@@ -309,7 +310,7 @@ fun ChannelSettingsPermissions(navController: NavController, channelId: String) 
             ) {
                 SettingsIcon {
                     Icon(
-                        painter = painterResource(R.drawable.ic_group_24dp),
+                        painter = painterResource(Res.drawable.ic_group_24dp),
                         contentDescription = null,
                     )
                 }
@@ -488,7 +489,7 @@ fun ChannelSettingsPermissionEditor(
                         LoadingIndicator(Modifier.size(24.dp))
                     } else {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check_24dp),
+                            painter = painterResource(Res.drawable.ic_check_24dp),
                             contentDescription = stringResource(
                                 Res.string.channel_settings_permissions_save
                             ),

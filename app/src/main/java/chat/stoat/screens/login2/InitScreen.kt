@@ -25,13 +25,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import chat.stoat.BuildConfig
-import chat.stoat.R
 import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.composables.generic.AnyLink
 import chat.stoat.composables.generic.Weblink
@@ -39,9 +37,12 @@ import chat.stoat.core.model.data.STOAT_MARKETING
 import chat.stoat.api.settings.Theme
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.community_guidelines
+import chat.stoat.shared.resources.login_bg
 import chat.stoat.shared.resources.privacy_policy
+import chat.stoat.shared.resources.stoat_logo_white
 import chat.stoat.shared.resources.terms_of_service
 import com.chuckerteam.chucker.api.Chucker
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -51,7 +52,7 @@ fun InitScreen(
 ) {
     Box {
         Image(
-            painter = painterResource(R.drawable.login_bg),
+            painter = painterResource(Res.drawable.login_bg),
             modifier = Modifier
                 .scale(3f)
                 .offset(y = 32.dp)
@@ -103,7 +104,7 @@ private fun LeadPart(windowSizeClass: WindowSizeClass) {
             Spacer(Modifier.height(64.dp))
         }
         Image(
-            painter = painterResource(R.drawable.stoat_logo_white),
+            painter = painterResource(Res.drawable.stoat_logo_white),
             contentDescription = null,
             colorFilter = ColorFilter.tint(
                 MaterialTheme.colorScheme.onBackground

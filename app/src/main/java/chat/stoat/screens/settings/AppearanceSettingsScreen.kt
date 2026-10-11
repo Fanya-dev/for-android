@@ -54,7 +54,6 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLayoutDirection
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.role
 import androidx.compose.ui.semantics.semantics
@@ -64,7 +63,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatCbor
 import chat.stoat.api.StoatJson
 import chat.stoat.api.settings.LoadedSettings
@@ -77,6 +75,10 @@ import chat.stoat.core.model.data.OverridableColourScheme
 import chat.stoat.internals.extensions.getStringBlocking
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
+import chat.stoat.shared.resources.ic_file_export_24dp
+import chat.stoat.shared.resources.ic_file_open_24dp
+import chat.stoat.shared.resources.ic_keyboard_arrow_right_24dp
 import chat.stoat.shared.resources.settings_appearance
 import chat.stoat.shared.resources.settings_appearance_avatar_shape
 import chat.stoat.shared.resources.settings_appearance_avatar_shape_description
@@ -110,6 +112,7 @@ import kotlinx.coroutines.launch
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.builtins.MapSerializer
 import kotlinx.serialization.builtins.serializer
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -343,7 +346,7 @@ fun AppearanceSettingsScreen(
                         navController.popBackStack()
                     }) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                            painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                             contentDescription = stringResource(Res.string.back)
                         )
                     }
@@ -533,7 +536,7 @@ fun AppearanceSettingsScreen(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_keyboard_arrow_right_24dp),
+                        painter = painterResource(Res.drawable.ic_keyboard_arrow_right_24dp),
                         contentDescription = null,
                         modifier = Modifier
                             .padding(start = 20.dp, end = 4.dp)
@@ -565,7 +568,7 @@ fun AppearanceSettingsScreen(
                                 modifier = Modifier.weight(1f)
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_file_open_24dp),
+                                    painter = painterResource(Res.drawable.ic_file_open_24dp),
                                     contentDescription = null
                                 )
 
@@ -583,7 +586,7 @@ fun AppearanceSettingsScreen(
                                 modifier = Modifier.weight(1f)
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_file_export_24dp),
+                                    painter = painterResource(Res.drawable.ic_file_export_24dp),
                                     contentDescription = null
                                 )
 

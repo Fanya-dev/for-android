@@ -39,7 +39,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.LayoutCoordinates
 import androidx.compose.ui.layout.onGloballyPositioned
 import androidx.compose.ui.layout.positionInWindow
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.onLongClick
 import androidx.compose.ui.semantics.semantics
@@ -47,7 +46,6 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.core.graphics.toColorInt
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.settings.ServerSidebarEntry
 import chat.stoat.composables.generic.IconPlaceholder
@@ -56,6 +54,9 @@ import chat.stoat.composables.generic.bottomEndCircleCutout
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.Server
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_folder_open_24dp
+import chat.stoat.shared.resources.ic_screen_share_24dp
+import chat.stoat.shared.resources.ic_volume_up_24dp
 import chat.stoat.shared.resources.server_context_sheet_open
 import chat.stoat.shared.resources.server_folder_sheet_open
 import chat.stoat.shared.resources.server_folder_unnamed
@@ -64,6 +65,7 @@ import chat.stoat.shared.resources.voice_notification_ongoing_call
 import chat.stoat.shared.resources.voice_screen_sharing
 import chat.stoat.ui.colour.CSSColours
 import chat.stoat.ui.colour.parseCssFunctionColour
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 private val ServerVoiceBadgeSize = 16.dp
@@ -233,8 +235,8 @@ fun ServerRailIcon(
     }
     val hasScreenShare = voiceParticipants.any { it.screensharing }
     val voiceBadgeIcon = when {
-        hasScreenShare -> R.drawable.ic_screen_share_24dp
-        voiceParticipants.isNotEmpty() -> R.drawable.ic_volume_up_24dp
+        hasScreenShare -> Res.drawable.ic_screen_share_24dp
+        voiceParticipants.isNotEmpty() -> Res.drawable.ic_volume_up_24dp
         else -> null
     }
     val longClickLabel = stringResource(Res.string.server_context_sheet_open)
@@ -348,7 +350,7 @@ fun FolderIcon(entry: ServerSidebarEntry.Folder, modifier: Modifier = Modifier) 
             FolderPreview(entry.servers)
         } else {
             Icon(
-                painter = painterResource(R.drawable.ic_folder_open_24dp),
+                painter = painterResource(Res.drawable.ic_folder_open_24dp),
                 contentDescription = null,
                 tint = colour ?: MaterialTheme.colorScheme.onSurface
             )

@@ -21,13 +21,11 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.intl.Locale
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.composables.generic.DobPicker
 import chat.stoat.composables.generic.DobRegion
 import chat.stoat.shared.resources.Res
@@ -40,6 +38,7 @@ import chat.stoat.shared.resources.channel_age_gate_dob_proceed
 import chat.stoat.shared.resources.channel_age_gate_dob_section
 import chat.stoat.shared.resources.channel_age_gate_dob_too_young
 import chat.stoat.shared.resources.channel_age_gate_title
+import chat.stoat.shared.resources.ic_front_hand_24dp
 import kotlinx.datetime.Clock
 import kotlinx.datetime.LocalDateTime
 import kotlinx.datetime.TimeZone
@@ -47,6 +46,7 @@ import kotlinx.datetime.UtcOffset
 import kotlinx.datetime.toInstant
 import kotlinx.datetime.toLocalDateTime
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -133,7 +133,7 @@ fun ChannelScreenAgeGate(
         verticalArrangement = Arrangement.spacedBy(16.dp, Alignment.CenterVertically)
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_front_hand_24dp),
+            painter = painterResource(Res.drawable.ic_front_hand_24dp),
             contentDescription = null,
             modifier = Modifier.size(48.dp),
         )

@@ -36,7 +36,6 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -45,7 +44,6 @@ import androidx.core.view.WindowCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.StoatAPIError
 import chat.stoat.api.routes.invites.fetchInviteByCode
@@ -60,6 +58,7 @@ import chat.stoat.core.model.schemas.Invite
 import chat.stoat.core.model.schemas.InviteJoined
 import chat.stoat.core.model.util.RsResult
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_error_24dp
 import chat.stoat.shared.resources.invite_already_member
 import chat.stoat.shared.resources.invite_cancel
 import chat.stoat.shared.resources.invite_error_banned
@@ -76,6 +75,7 @@ import chat.stoat.ui.theme.StoatTheme
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 class InviteActivity : ComponentActivity() {
@@ -318,7 +318,7 @@ fun InvalidInviteError(error: StoatAPIError? = null, onDismissRequest: () -> Uni
         onDismissRequest = onDismissRequest,
         icon = {
             Icon(
-                painter = painterResource(R.drawable.ic_error_24dp),
+                painter = painterResource(Res.drawable.ic_error_24dp),
                 contentDescription = null, // decorative
                 tint = MaterialTheme.colorScheme.primary
             )
@@ -364,7 +364,7 @@ fun NoInviteSpecifiedError(onDismissRequest: () -> Unit) {
         onDismissRequest = onDismissRequest,
         icon = {
             Icon(
-                painter = painterResource(R.drawable.ic_error_24dp),
+                painter = painterResource(Res.drawable.ic_error_24dp),
                 contentDescription = null, // decorative
                 tint = MaterialTheme.colorScheme.primary
             )

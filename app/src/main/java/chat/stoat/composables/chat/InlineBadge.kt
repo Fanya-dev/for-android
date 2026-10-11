@@ -6,14 +6,18 @@ import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.badge_bot_alt
 import chat.stoat.shared.resources.badge_masquerade_alt
 import chat.stoat.shared.resources.badge_team_member_alt
 import chat.stoat.shared.resources.badge_webhook_alt
+import chat.stoat.shared.resources.ic_brightness_alert_24dp
+import chat.stoat.shared.resources.ic_cloud_24dp
+import chat.stoat.shared.resources.ic_hardware_24dp
+import chat.stoat.shared.resources.ic_link_24dp
+import chat.stoat.shared.resources.ic_smart_toy_24dp
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class InlineBadge {
@@ -32,35 +36,35 @@ fun InlineBadge(
 ) {
     when (badge) {
         InlineBadge.Bot -> Icon(
-            painter = painterResource(id = R.drawable.ic_smart_toy_24dp),
+            painter = painterResource(Res.drawable.ic_smart_toy_24dp),
             contentDescription = stringResource(Res.string.badge_bot_alt),
             tint = colour,
             modifier = modifier
         )
 
         InlineBadge.Bridge -> Icon(
-            painter = painterResource(id = R.drawable.ic_link_24dp),
+            painter = painterResource(Res.drawable.ic_link_24dp),
             contentDescription = stringResource(Res.string.badge_masquerade_alt),
             tint = colour,
             modifier = modifier
         )
 
         InlineBadge.PlatformModeration -> Icon(
-            painter = painterResource(id = R.drawable.ic_brightness_alert_24dp),
+            painter = painterResource(Res.drawable.ic_brightness_alert_24dp),
             contentDescription = stringResource(Res.string.badge_bot_alt),
             tint = colour,
             modifier = modifier
         )
 
         InlineBadge.TeamMember -> Icon(
-            painter = painterResource(id = R.drawable.ic_hardware_24dp),
+            painter = painterResource(Res.drawable.ic_hardware_24dp),
             contentDescription = stringResource(Res.string.badge_team_member_alt),
             tint = colour,
             modifier = modifier
         )
 
         InlineBadge.Webhook -> Icon(
-            painter = painterResource(id = R.drawable.ic_cloud_24dp),
+            painter = painterResource(Res.drawable.ic_cloud_24dp),
             contentDescription = stringResource(Res.string.badge_webhook_alt),
             tint = colour,
             modifier = modifier.padding(start = 4.dp)

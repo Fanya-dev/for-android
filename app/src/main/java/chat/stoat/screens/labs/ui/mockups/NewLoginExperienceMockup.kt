@@ -27,7 +27,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
@@ -36,9 +35,12 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import chat.stoat.R
 import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.api.settings.Theme
+import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.login_bg
+import chat.stoat.shared.resources.stoat_wordmark_white
+import org.jetbrains.compose.resources.painterResource
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
 @Composable
@@ -72,7 +74,7 @@ fun NewLoginExperienceMockup(navController: NavController) {
         composable("greet") {
             Box {
                 Image(
-                    painter = painterResource(R.drawable.login_bg),
+                    painter = painterResource(Res.drawable.login_bg),
                     modifier = Modifier
                         .scale(3f)
                         .offset(y = 32.dp)
@@ -94,7 +96,7 @@ fun NewLoginExperienceMockup(navController: NavController) {
                     ) {
                         Spacer(modifier = Modifier.height(64.dp))
                         Image(
-                            painter = painterResource(R.drawable.stoat_wordmark_white),
+                            painter = painterResource(Res.drawable.stoat_wordmark_white),
                             contentDescription = null,
                             colorFilter = if (LoadedSettings.theme == Theme.M3Dynamic) ColorFilter.tint(
                                 MaterialTheme.colorScheme.onBackground

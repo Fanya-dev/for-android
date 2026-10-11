@@ -15,18 +15,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.internals.ChannelUtils
 import chat.stoat.core.model.schemas.Channel
 import chat.stoat.core.model.schemas.ChannelType
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.channel_notes
+import chat.stoat.shared.resources.ic_keyboard_arrow_right_24dp
+import chat.stoat.shared.resources.ic_menu_24dp
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.unknown
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -50,7 +51,7 @@ fun ChannelHeader(
                 onToggleDrawer()
             }) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_menu_24dp),
+                    painter = painterResource(Res.drawable.ic_menu_24dp),
                     contentDescription = stringResource(Res.string.menu)
                 )
             }
@@ -94,7 +95,7 @@ fun ChannelHeader(
             Spacer(modifier = Modifier.width(4.dp))
 
             Icon(
-                painter = painterResource(R.drawable.ic_keyboard_arrow_right_24dp),
+                painter = painterResource(Res.drawable.ic_keyboard_arrow_right_24dp),
                 contentDescription = stringResource(Res.string.menu),
                 modifier = Modifier
                     .size(18.dp)

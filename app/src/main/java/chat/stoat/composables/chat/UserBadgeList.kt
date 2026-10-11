@@ -9,34 +9,42 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.core.model.schemas.UserBadges
 import chat.stoat.core.model.schemas.has
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_emoji_people_24dp
 import chat.stoat.shared.resources.user_badge_active_supporter
 import chat.stoat.shared.resources.user_badge_developer
+import chat.stoat.shared.resources.user_badge_disclosure
 import chat.stoat.shared.resources.user_badge_early_adopter
 import chat.stoat.shared.resources.user_badge_founder
+import chat.stoat.shared.resources.user_badge_moderation
 import chat.stoat.shared.resources.user_badge_paw
 import chat.stoat.shared.resources.user_badge_platform_moderation
 import chat.stoat.shared.resources.user_badge_reserved_relevant_joke_badge_1
 import chat.stoat.shared.resources.user_badge_reserved_relevant_joke_badge_2
+import chat.stoat.shared.resources.user_badge_reserved_relevant_one
+import chat.stoat.shared.resources.user_badge_reserved_relevant_two
 import chat.stoat.shared.resources.user_badge_responsible_disclosure
 import chat.stoat.shared.resources.user_badge_supporter
 import chat.stoat.shared.resources.user_badge_translator
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
 fun BadgeListEntryTemplate(
     label: String,
-    icon: Painter
+    icon: Painter,
+    tint: Color? = null,
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically
@@ -44,6 +52,7 @@ fun BadgeListEntryTemplate(
         Image(
             painter = icon,
             contentDescription = null,
+            colorFilter = tint?.let(ColorFilter::tint),
             modifier = Modifier
                 .size(24.dp)
         )
@@ -62,77 +71,78 @@ fun BadgeListEntry(badge: UserBadges) {
         UserBadges.Developer.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_developer),
-                icon = painterResource(R.drawable.user_badge_developer)
+                icon = painterResource(Res.drawable.user_badge_developer)
             )
         }
 
         UserBadges.Translator.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_translator),
-                icon = painterResource(R.drawable.user_badge_translator)
+                icon = painterResource(Res.drawable.user_badge_translator)
             )
         }
 
         UserBadges.Supporter.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_supporter),
-                icon = painterResource(R.drawable.user_badge_supporter)
+                icon = painterResource(Res.drawable.user_badge_supporter)
             )
         }
 
         UserBadges.ResponsibleDisclosure.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_responsible_disclosure),
-                icon = painterResource(R.drawable.user_badge_disclosure)
+                icon = painterResource(Res.drawable.user_badge_disclosure)
             )
         }
 
         UserBadges.Founder.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_founder),
-                icon = painterResource(R.drawable.user_badge_founder)
+                icon = painterResource(Res.drawable.user_badge_founder)
             )
         }
 
         UserBadges.PlatformModeration.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_platform_moderation),
-                icon = painterResource(R.drawable.user_badge_moderation)
+                icon = painterResource(Res.drawable.user_badge_moderation)
             )
         }
 
         UserBadges.ActiveSupporter.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_active_supporter),
-                icon = painterResource(R.drawable.ic_emoji_people_24dp)
+                icon = painterResource(Res.drawable.ic_emoji_people_24dp),
+                tint = LocalContentColor.current,
             )
         }
 
         UserBadges.Paw.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_paw),
-                icon = painterResource(R.drawable.user_badge_paw)
+                icon = painterResource(Res.drawable.user_badge_paw)
             )
         }
 
         UserBadges.EarlyAdopter.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_early_adopter),
-                icon = painterResource(R.drawable.user_badge_early_adopter)
+                icon = painterResource(Res.drawable.user_badge_early_adopter)
             )
         }
 
         UserBadges.ReservedRelevantJokeBadge1.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_reserved_relevant_joke_badge_1),
-                icon = painterResource(R.drawable.user_badge_reserved_relevant_one)
+                icon = painterResource(Res.drawable.user_badge_reserved_relevant_one)
             )
         }
 
         UserBadges.ReservedRelevantJokeBadge2.value -> {
             BadgeListEntryTemplate(
                 label = stringResource(Res.string.user_badge_reserved_relevant_joke_badge_2),
-                icon = painterResource(R.drawable.user_badge_reserved_relevant_two)
+                icon = painterResource(Res.drawable.user_badge_reserved_relevant_two)
             )
         }
     }
@@ -163,17 +173,17 @@ fun UserBadgeRow(badges: Long) {
             .forEach { badge ->
                 Image(
                     painter = when (badge) {
-                        UserBadges.Developer -> painterResource(R.drawable.user_badge_developer)
-                        UserBadges.Translator -> painterResource(R.drawable.user_badge_translator)
-                        UserBadges.Supporter -> painterResource(R.drawable.user_badge_supporter)
-                        UserBadges.ResponsibleDisclosure -> painterResource(R.drawable.user_badge_disclosure)
-                        UserBadges.Founder -> painterResource(R.drawable.user_badge_founder)
-                        UserBadges.PlatformModeration -> painterResource(R.drawable.user_badge_moderation)
-                        UserBadges.ActiveSupporter -> painterResource(R.drawable.ic_emoji_people_24dp)
-                        UserBadges.Paw -> painterResource(R.drawable.user_badge_paw)
-                        UserBadges.EarlyAdopter -> painterResource(R.drawable.user_badge_early_adopter)
-                        UserBadges.ReservedRelevantJokeBadge1 -> painterResource(R.drawable.user_badge_reserved_relevant_one)
-                        UserBadges.ReservedRelevantJokeBadge2 -> painterResource(R.drawable.user_badge_reserved_relevant_two)
+                        UserBadges.Developer -> painterResource(Res.drawable.user_badge_developer)
+                        UserBadges.Translator -> painterResource(Res.drawable.user_badge_translator)
+                        UserBadges.Supporter -> painterResource(Res.drawable.user_badge_supporter)
+                        UserBadges.ResponsibleDisclosure -> painterResource(Res.drawable.user_badge_disclosure)
+                        UserBadges.Founder -> painterResource(Res.drawable.user_badge_founder)
+                        UserBadges.PlatformModeration -> painterResource(Res.drawable.user_badge_moderation)
+                        UserBadges.ActiveSupporter -> painterResource(Res.drawable.ic_emoji_people_24dp)
+                        UserBadges.Paw -> painterResource(Res.drawable.user_badge_paw)
+                        UserBadges.EarlyAdopter -> painterResource(Res.drawable.user_badge_early_adopter)
+                        UserBadges.ReservedRelevantJokeBadge1 -> painterResource(Res.drawable.user_badge_reserved_relevant_one)
+                        UserBadges.ReservedRelevantJokeBadge2 -> painterResource(Res.drawable.user_badge_reserved_relevant_two)
                     },
                     contentDescription = when (badge) {
                         UserBadges.Developer -> stringResource(Res.string.user_badge_developer)
@@ -187,6 +197,11 @@ fun UserBadgeRow(badges: Long) {
                         UserBadges.EarlyAdopter -> stringResource(Res.string.user_badge_early_adopter)
                         UserBadges.ReservedRelevantJokeBadge1 -> stringResource(Res.string.user_badge_reserved_relevant_joke_badge_1)
                         UserBadges.ReservedRelevantJokeBadge2 -> stringResource(Res.string.user_badge_reserved_relevant_joke_badge_2)
+                    },
+                    colorFilter = if (badge == UserBadges.ActiveSupporter) {
+                        ColorFilter.tint(LocalContentColor.current)
+                    } else {
+                        null
                     },
                     modifier = Modifier
                         .size(32.dp)

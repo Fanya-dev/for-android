@@ -35,14 +35,12 @@ import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import chat.stoat.BuildConfig
-import chat.stoat.R
 import chat.stoat.composables.generic.AnyLink
 import chat.stoat.composables.generic.Weblink
 import chat.stoat.core.model.data.STOAT_MARKETING
@@ -53,8 +51,10 @@ import chat.stoat.shared.resources.login_onboarding_body
 import chat.stoat.shared.resources.login_onboarding_heading
 import chat.stoat.shared.resources.privacy_policy
 import chat.stoat.shared.resources.signup
+import chat.stoat.shared.resources.stoat_logo_white
 import chat.stoat.shared.resources.terms_of_service
 import com.chuckerteam.chucker.api.Chucker
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalFoundationApi::class)
@@ -79,7 +79,7 @@ fun LoginGreetingScreen(navController: NavController) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Image(
-                painter = painterResource(id = R.drawable.stoat_logo_white),
+                painter = painterResource(Res.drawable.stoat_logo_white),
                 colorFilter = ColorFilter.tint(LocalContentColor.current),
                 contentDescription = "Stoat",
                 contentScale = ContentScale.Fit,

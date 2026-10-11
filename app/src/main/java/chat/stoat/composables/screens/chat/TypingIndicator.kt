@@ -35,7 +35,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.clearAndSetSemantics
 import androidx.compose.ui.semantics.text
 import androidx.compose.ui.text.AnnotatedString
@@ -44,7 +43,6 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenColour
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.activities.StoatTweenInt
@@ -55,6 +53,7 @@ import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.User
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_timer_24dp
 import chat.stoat.shared.resources.slowmode_immune
 import chat.stoat.shared.resources.typing_blank
 import chat.stoat.shared.resources.typing_many
@@ -66,6 +65,7 @@ import dev.chrisbanes.haze.hazeEffect
 import dev.chrisbanes.haze.materials.ExperimentalHazeMaterialsApi
 import dev.chrisbanes.haze.materials.HazeMaterials
 import org.jetbrains.compose.resources.StringResource
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -251,7 +251,7 @@ fun TypingIndicator(
                         verticalAlignment = Alignment.CenterVertically,
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_timer_24dp),
+                            painter = painterResource(Res.drawable.ic_timer_24dp),
                             contentDescription = null,
                             modifier = Modifier.size(16.dp),
                             tint = slowmodeColor,

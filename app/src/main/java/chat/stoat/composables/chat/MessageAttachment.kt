@@ -29,10 +29,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.composables.generic.RemoteImage
 import chat.stoat.composables.media.AudioPlayer
 import chat.stoat.composables.media.VoiceMessagePlayer
@@ -40,12 +38,15 @@ import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.AutumnResource
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.attachment_spoiler
+import chat.stoat.shared.resources.ic_file_present_24dp
+import chat.stoat.shared.resources.ic_play_arrow_24dp__fill
 import chat.stoat.shared.resources.media_viewer_play
 import dev.chrisbanes.haze.hazeEffect
 import dev.chrisbanes.haze.hazeSource
 import dev.chrisbanes.haze.materials.ExperimentalHazeMaterialsApi
 import dev.chrisbanes.haze.materials.HazeMaterials
 import dev.chrisbanes.haze.rememberHazeState
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -61,7 +62,7 @@ fun FileAttachment(attachment: AutumnResource) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Icon(
-                painter = painterResource(id = R.drawable.ic_file_present_24dp),
+                painter = painterResource(Res.drawable.ic_file_present_24dp),
                 contentDescription = null
             )
 
@@ -143,7 +144,7 @@ fun VideoPlayButton() {
     )
 
     Icon(
-        painter = painterResource(R.drawable.ic_play_arrow_24dp__fill),
+        painter = painterResource(Res.drawable.ic_play_arrow_24dp__fill),
         contentDescription = stringResource(Res.string.media_viewer_play),
         modifier = Modifier
             .width(32.dp)

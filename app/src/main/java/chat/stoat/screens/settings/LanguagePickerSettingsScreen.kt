@@ -22,18 +22,18 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.core.os.LocaleListCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.internals.extensions.getSupportedLocales
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import chat.stoat.shared.resources.settings_language
 import chat.stoat.shared.resources.settings_language_auto
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import java.util.Locale
 
@@ -84,7 +84,7 @@ fun LanguagePickerSettingsScreen(
                             navController.popBackStack()
                         }) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                 contentDescription = stringResource(Res.string.back)
                             )
                         }

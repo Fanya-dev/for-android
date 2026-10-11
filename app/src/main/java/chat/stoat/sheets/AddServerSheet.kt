@@ -45,13 +45,11 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.PathEffect
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import chat.stoat.R
 import chat.stoat.activities.InviteActivity
 import chat.stoat.api.routes.server.createServer
 import chat.stoat.callbacks.Action
@@ -86,10 +84,12 @@ import chat.stoat.shared.resources.add_server_sheet_step_1j_join
 import chat.stoat.shared.resources.add_server_sheet_step_1j_label
 import chat.stoat.shared.resources.add_server_sheet_step_1j_title
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import logcat.asLog
 import logcat.logcat
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class AddServerSheetStep(val animationValue: Int) {
@@ -241,7 +241,7 @@ fun AddServerSheet(onDismiss: () -> Unit) {
                                 }
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                    painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                     contentDescription = stringResource(Res.string.back),
                                 )
                             }
@@ -394,7 +394,7 @@ fun AddServerSheet(onDismiss: () -> Unit) {
                                 }
                             ) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                    painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                     contentDescription = stringResource(Res.string.back),
                                 )
                             }

@@ -23,18 +23,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.settings.dsl.SettingsPage
+import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.tmp_card_asset_tl
 import chat.stoat.ui.theme.FragmentMono
+import org.jetbrains.compose.resources.painterResource
 import java.text.DateFormat
 import java.util.Date
 import java.util.Locale
@@ -103,7 +104,7 @@ fun NewCardSandboxScreen(navController: NavController) {
             val (logoAsset, cardIssuedLabel, cardIssued, tag, avatar) = createRefs()
 
             Image(
-                painter = painterResource(R.drawable.tmp_card_asset_tl),
+                painter = painterResource(Res.drawable.tmp_card_asset_tl),
                 contentDescription = "XY Uppercase Text",
                 modifier = Modifier
                     .constrainAs(logoAsset) {

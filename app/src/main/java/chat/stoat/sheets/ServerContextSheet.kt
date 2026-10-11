@@ -29,10 +29,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.server.leaveOrDeleteServer
 import chat.stoat.api.settings.ServerFolders
@@ -45,6 +43,14 @@ import chat.stoat.internals.Platform
 import chat.stoat.internals.extensions.rememberServerPermissions
 import chat.stoat.internals.server.availableServerSettingsOptions
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_door_open_24dp
+import chat.stoat.shared.resources.ic_folder_24dp
+import chat.stoat.shared.resources.ic_folder_off_24dp
+import chat.stoat.shared.resources.ic_id_card_24dp
+import chat.stoat.shared.resources.ic_identifier_copy_24dp
+import chat.stoat.shared.resources.ic_mark_chat_read_24dp
+import chat.stoat.shared.resources.ic_report_24dp
+import chat.stoat.shared.resources.ic_settings_24dp
 import chat.stoat.shared.resources.server_context_sheet_actions_add_to_folder
 import chat.stoat.shared.resources.server_context_sheet_actions_copy_id
 import chat.stoat.shared.resources.server_context_sheet_actions_copy_id_copied
@@ -64,6 +70,7 @@ import chat.stoat.shared.resources.server_settings
 import chat.stoat.shared.resources.unknown
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.time.Duration.Companion.milliseconds
 
@@ -202,7 +209,7 @@ fun ServerContextSheet(
         SheetButton(
             leadingContent = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_identifier_copy_24dp),
+                    painter = painterResource(Res.drawable.ic_identifier_copy_24dp),
                     contentDescription = null
                 )
             },
@@ -233,7 +240,7 @@ fun ServerContextSheet(
         SheetButton(
             leadingContent = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_mark_chat_read_24dp),
+                    painter = painterResource(Res.drawable.ic_mark_chat_read_24dp),
                     contentDescription = null
                 )
             },
@@ -255,7 +262,7 @@ fun ServerContextSheet(
         SheetButton(
             leadingContent = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_folder_24dp),
+                    painter = painterResource(Res.drawable.ic_folder_24dp),
                     contentDescription = null
                 )
             },
@@ -278,7 +285,7 @@ fun ServerContextSheet(
             SheetButton(
                 leadingContent = {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_folder_off_24dp),
+                        painter = painterResource(Res.drawable.ic_folder_off_24dp),
                         contentDescription = null
                     )
                 },
@@ -297,7 +304,7 @@ fun ServerContextSheet(
         SheetButton(
             leadingContent = {
                 Icon(
-                    painter = painterResource(id = R.drawable.ic_id_card_24dp),
+                    painter = painterResource(Res.drawable.ic_id_card_24dp),
                     contentDescription = null,
                 )
             },
@@ -321,7 +328,7 @@ fun ServerContextSheet(
             SheetButton(
                 leadingContent = {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_settings_24dp),
+                        painter = painterResource(Res.drawable.ic_settings_24dp),
                         contentDescription = null,
                     )
                 },
@@ -344,7 +351,7 @@ fun ServerContextSheet(
             SheetButton(
                 leadingContent = {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_report_24dp),
+                        painter = painterResource(Res.drawable.ic_report_24dp),
                         contentDescription = null
                     )
                 },
@@ -362,7 +369,7 @@ fun ServerContextSheet(
             SheetButton(
                 leadingContent = {
                     Icon(
-                        painter = painterResource(id = R.drawable.ic_door_open_24dp),
+                        painter = painterResource(Res.drawable.ic_door_open_24dp),
                         contentDescription = null,
                     )
                 },

@@ -36,7 +36,6 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -44,7 +43,6 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.activities.StoatTweenSize
 import chat.stoat.api.StoatAPI
@@ -61,6 +59,10 @@ import chat.stoat.internals.server.ServerIdentityCapabilities
 import chat.stoat.internals.server.serverIdentityCapabilities
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_check_24dp
+import chat.stoat.shared.resources.ic_error_24dp
+import chat.stoat.shared.resources.ic_id_card_24dp
+import chat.stoat.shared.resources.ic_person_celebrate_24dp
 import chat.stoat.shared.resources.server_identity_avatar
 import chat.stoat.shared.resources.server_identity_avatar_custom
 import chat.stoat.shared.resources.server_identity_avatar_custom_member
@@ -96,6 +98,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -426,7 +429,7 @@ fun ServerIdentitySettingsScreen(
                         )
                     } else {
                         Icon(
-                            painter = painterResource(R.drawable.ic_check_24dp),
+                            painter = painterResource(Res.drawable.ic_check_24dp),
                             contentDescription = stringResource(Res.string.server_identity_save),
                         )
                     }
@@ -580,7 +583,7 @@ fun ServerIdentitySettingsScreen(
             },
             leadingIcon = {
                 Icon(
-                    painter = painterResource(R.drawable.ic_id_card_24dp),
+                    painter = painterResource(Res.drawable.ic_id_card_24dp),
                     contentDescription = null,
                 )
             },
@@ -614,7 +617,7 @@ fun ServerIdentitySettingsScreen(
             placeholder = { Text(stringResource(Res.string.server_identity_pronouns_placeholder)) },
             leadingIcon = {
                 Icon(
-                    painter = painterResource(R.drawable.ic_person_celebrate_24dp),
+                    painter = painterResource(Res.drawable.ic_person_celebrate_24dp),
                     contentDescription = null,
                 )
             },
@@ -661,7 +664,7 @@ private fun LoadError(message: String, onRetry: () -> Unit) {
             .padding(32.dp),
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_error_24dp),
+            painter = painterResource(Res.drawable.ic_error_24dp),
             contentDescription = null,
             tint = MaterialTheme.colorScheme.error,
             modifier = Modifier.size(40.dp),

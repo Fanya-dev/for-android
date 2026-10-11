@@ -25,12 +25,12 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
-import chat.stoat.R
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_mic_24dp
+import chat.stoat.shared.resources.ic_videocam_24dp
 import chat.stoat.shared.resources.voice_join_permission_rationale_assurance
 import chat.stoat.shared.resources.voice_join_permission_rationale_cta
 import chat.stoat.shared.resources.voice_join_permission_rationale_description
@@ -41,6 +41,7 @@ import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import com.google.accompanist.permissions.PermissionStatus
 import com.google.accompanist.permissions.rememberMultiplePermissionsState
 import com.google.accompanist.permissions.shouldShowRationale
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalPermissionsApi::class, ExperimentalMaterial3Api::class)
@@ -95,7 +96,7 @@ fun VoicePermissionSwitch(onCancel: () -> Unit, onPermissionGranted: @Composable
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_mic_24dp),
+                        painter = painterResource(Res.drawable.ic_mic_24dp),
                         contentDescription = null
                     )
                     Text(
@@ -110,7 +111,7 @@ fun VoicePermissionSwitch(onCancel: () -> Unit, onPermissionGranted: @Composable
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_videocam_24dp),
+                        painter = painterResource(Res.drawable.ic_videocam_24dp),
                         contentDescription = null
                     )
                     Text(

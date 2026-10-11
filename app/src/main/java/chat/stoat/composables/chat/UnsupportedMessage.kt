@@ -21,13 +21,13 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_error_24dp
 import chat.stoat.shared.resources.message_not_supported
 import chat.stoat.shared.resources.message_not_supported_with_context
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3ExpressiveApi::class)
@@ -58,7 +58,7 @@ fun UnsupportedMessage(modifier: Modifier = Modifier, context: String? = null) {
                     LocalContentColor provides MaterialTheme.colorScheme.onErrorContainer,
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_error_24dp),
+                        painter = painterResource(Res.drawable.ic_error_24dp),
                         contentDescription = null,
                         tint = LocalContentColor.current,
                         modifier = Modifier.size(24.dp)

@@ -56,11 +56,9 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.net.toUri
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.activities.InviteActivity
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.user.fetchSelf
@@ -71,6 +69,14 @@ import chat.stoat.core.model.schemas.User
 import chat.stoat.internals.extensions.zero
 import chat.stoat.screens.chat.LocalIsConnected
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_campaign_24dp
+import chat.stoat.shared.resources.ic_error_24dp
+import chat.stoat.shared.resources.ic_inbox_24dp
+import chat.stoat.shared.resources.ic_ios_share_24dp
+import chat.stoat.shared.resources.ic_menu_24dp
+import chat.stoat.shared.resources.ic_move_to_inbox_24dp
+import chat.stoat.shared.resources.ic_settings_24dp
+import chat.stoat.shared.resources.ic_waving_hand_24dp
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.overview_screen_catch_up
 import chat.stoat.shared.resources.overview_screen_catch_up_amount_badge_loading
@@ -90,6 +96,7 @@ import chat.stoat.shared.resources.overview_screen_share_profile_description
 import chat.stoat.shared.resources.overview_screen_title
 import chat.stoat.sheets.UserCardSheet
 import io.sentry.Sentry
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -178,7 +185,7 @@ fun OverviewScreen(
                                 onDrawerClicked()
                             }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_menu_24dp),
+                                    painter = painterResource(Res.drawable.ic_menu_24dp),
                                     contentDescription = stringResource(Res.string.menu)
                                 )
                             }
@@ -196,7 +203,7 @@ fun OverviewScreen(
             NonIdealState(
                 icon = { size ->
                     Icon(
-                        painter = painterResource(R.drawable.ic_error_24dp),
+                        painter = painterResource(Res.drawable.ic_error_24dp),
                         contentDescription = null,
                         modifier = Modifier.size(size)
                     )
@@ -270,8 +277,8 @@ fun OverviewScreen(
                                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                                         ) {
                                             Icon(
-                                                painter = if (hasUnreads) painterResource(R.drawable.ic_move_to_inbox_24dp) else painterResource(
-                                                    R.drawable.ic_inbox_24dp
+                                                painter = if (hasUnreads) painterResource(Res.drawable.ic_move_to_inbox_24dp) else painterResource(
+                                                    Res.drawable.ic_inbox_24dp
                                                 ),
                                                 contentDescription = null,
                                                 modifier = Modifier.size(22.dp)
@@ -317,7 +324,7 @@ fun OverviewScreen(
                                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                                     ) {
                                         Icon(
-                                            painter = painterResource(R.drawable.ic_settings_24dp),
+                                            painter = painterResource(Res.drawable.ic_settings_24dp),
                                             contentDescription = null,
                                             modifier = Modifier.size(22.dp)
                                         )
@@ -340,7 +347,7 @@ fun OverviewScreen(
                                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                                     ) {
                                         Icon(
-                                            painter = painterResource(R.drawable.ic_ios_share_24dp),
+                                            painter = painterResource(Res.drawable.ic_ios_share_24dp),
                                             contentDescription = null,
                                             modifier = Modifier.size(22.dp)
                                         )
@@ -364,7 +371,7 @@ fun OverviewScreen(
                                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                                     ) {
                                         Icon(
-                                            painter = painterResource(R.drawable.ic_campaign_24dp),
+                                            painter = painterResource(Res.drawable.ic_campaign_24dp),
                                             contentDescription = null,
                                             modifier = Modifier.size(22.dp)
                                         )
@@ -394,7 +401,7 @@ fun OverviewScreen(
                                         horizontalArrangement = Arrangement.spacedBy(8.dp)
                                     ) {
                                         Icon(
-                                            painter = painterResource(R.drawable.ic_waving_hand_24dp),
+                                            painter = painterResource(Res.drawable.ic_waving_hand_24dp),
                                             contentDescription = null,
                                             modifier = Modifier.size(22.dp)
                                         )

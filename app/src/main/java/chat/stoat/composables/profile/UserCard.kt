@@ -38,11 +38,9 @@ import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.graphics.rememberGraphicsLayer
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
@@ -51,19 +49,21 @@ import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.core.graphics.drawable.toBitmap
 import androidx.palette.graphics.Palette
-import chat.stoat.R
 import chat.stoat.api.internals.ResourceLocations
 import chat.stoat.api.internals.ULID
 import chat.stoat.api.internals.UserQR
 import chat.stoat.core.model.schemas.User
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.revolt_usercard
 import chat.stoat.shared.resources.unknown
 import chat.stoat.shared.resources.user_card_data_point_display_name
 import chat.stoat.shared.resources.user_card_data_point_join_date
 import chat.stoat.shared.resources.user_card_data_point_photo
 import chat.stoat.shared.resources.user_card_data_point_qrcode
 import chat.stoat.shared.resources.user_card_data_point_username
+import chat.stoat.shared.resources.usercard_heading
+import chat.stoat.shared.resources.usercard_qr_placeholder
 import chat.stoat.ui.theme.FragmentMono
 import com.bumptech.glide.Glide
 import com.google.zxing.BarcodeFormat
@@ -73,6 +73,8 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import logcat.asLog
 import logcat.logcat
+import org.jetbrains.compose.resources.Font
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import java.time.Instant
 import java.util.Date
@@ -156,32 +158,32 @@ fun UserCard(
             LocalTextStyle provides LocalTextStyle.current.copy(
                 fontFamily = FontFamily(
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(200)),
                         weight = FontWeight.ExtraLight
                     ),
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(300)),
                         weight = FontWeight.Light
                     ),
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(400)),
                         weight = FontWeight.Normal
                     ),
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(500)),
                         weight = FontWeight.Medium
                     ),
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(700)),
                         weight = FontWeight.Bold
                     ),
                     Font(
-                        R.font.revolt_usercard,
+                        Res.font.revolt_usercard,
                         variationSettings = FontVariation.Settings(FontVariation.weight(900)),
                         weight = FontWeight.Black
                     )
@@ -210,7 +212,7 @@ fun UserCard(
                 val (heading, nameLabel, name, usernameLabel, username, joinDateLabel, joinDate, qrLabel, qr, photoLabel, photo, url) = createRefs()
 
                 Image(
-                    painter = painterResource(R.drawable.usercard_heading),
+                    painter = painterResource(Res.drawable.usercard_heading),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth(0.5f)
@@ -331,7 +333,7 @@ fun UserCard(
 
                 Image(
                     painter = qrCode?.let { BitmapPainter(it.asImageBitmap()) }
-                        ?: painterResource(R.drawable.usercard_qr_placeholder),
+                        ?: painterResource(Res.drawable.usercard_qr_placeholder),
                     contentDescription = null,
                     modifier = Modifier
                         .fillMaxWidth(0.5f)

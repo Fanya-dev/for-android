@@ -32,12 +32,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenFloat
 import chat.stoat.activities.StoatTweenSize
 import chat.stoat.api.StoatAPI
@@ -49,10 +47,12 @@ import chat.stoat.composables.chat.authorName
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.core.model.schemas.Message
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_close_24dp
 import chat.stoat.shared.resources.remove_reply_alt
 import chat.stoat.shared.resources.reply_mention_off
 import chat.stoat.shared.resources.reply_mention_on
 import chat.stoat.shared.resources.reply_message_empty_has_attachments
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 private class AnimatedReply(
@@ -99,7 +99,7 @@ fun ManageableReply(
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
-            painter = painterResource(R.drawable.ic_close_24dp),
+            painter = painterResource(Res.drawable.ic_close_24dp),
             contentDescription = stringResource(Res.string.remove_reply_alt),
             modifier = Modifier
                 .clip(MaterialTheme.shapes.small)

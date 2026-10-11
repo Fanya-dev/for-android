@@ -39,17 +39,18 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.snapshotFlow
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.contentType
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.composables.generic.NonIdealState
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_error_24dp
+import chat.stoat.shared.resources.ic_lock_24dp
+import chat.stoat.shared.resources.ic_shield_lock_24dp
 import chat.stoat.shared.resources.mfa_error_disallowed_method
 import chat.stoat.shared.resources.mfa_error_generic
 import chat.stoat.shared.resources.mfa_error_invalid_credentials
@@ -64,6 +65,7 @@ import chat.stoat.shared.resources.mfa_prompt_no_methods_title
 import chat.stoat.shared.resources.mfa_prompt_retry
 import chat.stoat.shared.resources.mfa_prompt_title
 import chat.stoat.ui.theme.FragmentMono
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -109,7 +111,7 @@ fun MfaPromptSheet(state: MfaPromptState) {
                     .size(96.dp)
             ) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_shield_lock_24dp),
+                    painter = painterResource(Res.drawable.ic_shield_lock_24dp),
                     contentDescription = null,
                     modifier = Modifier.size(64.dp),
                     tint = MaterialTheme.colorScheme.onPrimaryContainer
@@ -159,7 +161,7 @@ fun MfaPromptSheet(state: MfaPromptState) {
                     MfaPromptStage.LoadError -> NonIdealState(
                         icon = {
                             Icon(
-                                painter = painterResource(R.drawable.ic_error_24dp),
+                                painter = painterResource(Res.drawable.ic_error_24dp),
                                 contentDescription = null,
                                 modifier = Modifier.size(it)
                             )
@@ -181,7 +183,7 @@ fun MfaPromptSheet(state: MfaPromptState) {
                     MfaPromptStage.NoMethods -> NonIdealState(
                         icon = {
                             Icon(
-                                painter = painterResource(R.drawable.ic_lock_24dp),
+                                painter = painterResource(Res.drawable.ic_lock_24dp),
                                 contentDescription = null,
                                 modifier = Modifier.size(it)
                             )

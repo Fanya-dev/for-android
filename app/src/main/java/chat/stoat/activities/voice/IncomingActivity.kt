@@ -52,19 +52,20 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.lerp
 import androidx.compose.ui.platform.LocalDensity
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntOffset
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.composables.generic.Presence
 import chat.stoat.composables.generic.RemoteImage
 import chat.stoat.composables.generic.presenceColour
+import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_call_24dp__fill
 import chat.stoat.ui.theme.StoatTheme
 import chat.stoat.api.settings.Theme
 import chat.stoat.ui.theme.getDefaultFont
 import kotlinx.coroutines.delay
+import org.jetbrains.compose.resources.painterResource
 import kotlin.math.roundToInt
 
 class IncomingActivity : ComponentActivity() {
@@ -278,7 +279,7 @@ fun IncomingCallInner() {
                         .background(MaterialTheme.colorScheme.tertiaryContainer)
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_call_24dp__fill),
+                        painter = painterResource(Res.drawable.ic_call_24dp__fill),
                         contentDescription = null,
                         tint = MaterialTheme.colorScheme.onTertiaryContainer,
                         modifier = Modifier

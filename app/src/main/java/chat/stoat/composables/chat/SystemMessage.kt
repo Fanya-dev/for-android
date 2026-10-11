@@ -23,16 +23,28 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Shape
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.ULID
 import chat.stoat.composables.markdown.prose.ChatMarkdown
 import chat.stoat.core.model.schemas.Message
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_call_24dp__fill
+import chat.stoat.shared.resources.ic_contract_edit_24dp
+import chat.stoat.shared.resources.ic_door_open_24dp
+import chat.stoat.shared.resources.ic_gavel_24dp
+import chat.stoat.shared.resources.ic_group_add_24dp
+import chat.stoat.shared.resources.ic_group_remove_24dp
+import chat.stoat.shared.resources.ic_info_24dp
+import chat.stoat.shared.resources.ic_ink_highlighter_move_24dp
+import chat.stoat.shared.resources.ic_keep_24dp
+import chat.stoat.shared.resources.ic_keep_off_24dp
+import chat.stoat.shared.resources.ic_key_24dp
+import chat.stoat.shared.resources.ic_landscape_2_edit_24dp
+import chat.stoat.shared.resources.ic_sports_and_outdoors_24dp
+import chat.stoat.shared.resources.ic_waving_hand_24dp
 import chat.stoat.shared.resources.system_message_call_duration_days
 import chat.stoat.shared.resources.system_message_call_duration_few_seconds
 import chat.stoat.shared.resources.system_message_call_duration_hours
@@ -69,6 +81,7 @@ import chat.stoat.shared.resources.system_message_user_removed
 import chat.stoat.shared.resources.system_message_user_removed_alt
 import chat.stoat.shared.resources.unknown
 import kotlinx.datetime.Instant
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.pluralStringResource
 import org.jetbrains.compose.resources.stringResource
 
@@ -392,7 +405,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
     when (type) {
         SystemMessageType.CHANNEL_OWNERSHIP_CHANGED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_key_24dp),
+                painter = painterResource(Res.drawable.ic_key_24dp),
                 contentDescription = stringResource(Res.string.system_message_ownership_changed_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -401,7 +414,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.CHANNEL_ICON_CHANGED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_landscape_2_edit_24dp),
+                painter = painterResource(Res.drawable.ic_landscape_2_edit_24dp),
                 contentDescription = stringResource(
                     Res.string.system_message_channel_icon_changed_alt
                 ),
@@ -412,7 +425,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.CHANNEL_DESCRIPTION_CHANGED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_contract_edit_24dp),
+                painter = painterResource(Res.drawable.ic_contract_edit_24dp),
                 contentDescription = stringResource(
                     Res.string.system_message_channel_description_changed_alt
                 ),
@@ -423,7 +436,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.CHANNEL_RENAMED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_ink_highlighter_move_24dp),
+                painter = painterResource(Res.drawable.ic_ink_highlighter_move_24dp),
                 contentDescription = stringResource(Res.string.system_message_channel_renamed_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -432,7 +445,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_REMOVE -> {
             Icon(
-                painter = painterResource(R.drawable.ic_group_remove_24dp),
+                painter = painterResource(Res.drawable.ic_group_remove_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_removed_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -441,7 +454,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_ADDED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_group_add_24dp),
+                painter = painterResource(Res.drawable.ic_group_add_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_added_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -450,7 +463,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_BANNED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_gavel_24dp),
+                painter = painterResource(Res.drawable.ic_gavel_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_banned_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -459,7 +472,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_KICKED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_sports_and_outdoors_24dp),
+                painter = painterResource(Res.drawable.ic_sports_and_outdoors_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_kicked_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -468,7 +481,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_LEFT -> {
             Icon(
-                painter = painterResource(R.drawable.ic_door_open_24dp),
+                painter = painterResource(Res.drawable.ic_door_open_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_left_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -477,7 +490,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.USER_JOINED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_waving_hand_24dp),
+                painter = painterResource(Res.drawable.ic_waving_hand_24dp),
                 contentDescription = stringResource(Res.string.system_message_user_joined_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size),
@@ -486,7 +499,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.MESSAGE_PINNED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_keep_24dp),
+                painter = painterResource(Res.drawable.ic_keep_24dp),
                 contentDescription = stringResource(Res.string.system_message_message_pinned_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -495,7 +508,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.MESSAGE_UNPINNED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_keep_off_24dp),
+                painter = painterResource(Res.drawable.ic_keep_off_24dp),
                 contentDescription = stringResource(Res.string.system_message_message_unpinned_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -504,7 +517,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.CALL_STARTED -> {
             Icon(
-                painter = painterResource(R.drawable.ic_call_24dp__fill),
+                painter = painterResource(Res.drawable.ic_call_24dp__fill),
                 contentDescription = stringResource(Res.string.system_message_call_started_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)
@@ -513,7 +526,7 @@ fun SystemMessageIcon(type: SystemMessageType, modifier: Modifier = Modifier, si
 
         SystemMessageType.TEXT -> {
             Icon(
-                painter = painterResource(R.drawable.ic_info_24dp),
+                painter = painterResource(Res.drawable.ic_info_24dp),
                 contentDescription = stringResource(Res.string.system_message_text_alt),
                 tint = LocalContentColor.current,
                 modifier = modifier.size(size)

@@ -52,10 +52,8 @@ import androidx.compose.ui.graphics.ShaderBrush
 import androidx.compose.ui.graphics.drawscope.DrawScope
 import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.toColorInt
-import chat.stoat.R
 import chat.stoat.composables.generic.ControlledSlider
 import chat.stoat.internals.TailwindColourScheme
 import chat.stoat.shared.resources.Res
@@ -73,9 +71,11 @@ import chat.stoat.shared.resources.colour_picker_preview
 import chat.stoat.shared.resources.colour_picker_saturation
 import chat.stoat.shared.resources.colour_picker_use_default
 import chat.stoat.shared.resources.colour_picker_value
+import chat.stoat.shared.resources.ic_undo_24dp
 import chat.stoat.ui.colour.BrushCompat
 import chat.stoat.ui.colour.CSSColours
 import org.intellij.lang.annotations.Language
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class ColourPickerMode {
@@ -681,7 +681,7 @@ fun ColumnScope.ColourPickerSheet(
             verticalArrangement = Arrangement.spacedBy(4.dp)
         ) {
             TextButton(onClick = onUseDefaultColour, Modifier.fillMaxWidth()) {
-                Icon(painter = painterResource(R.drawable.ic_undo_24dp), null)
+                Icon(painter = painterResource(Res.drawable.ic_undo_24dp), null)
                 Spacer(Modifier.width(8.dp))
                 Text(stringResource(Res.string.colour_picker_use_default))
             }

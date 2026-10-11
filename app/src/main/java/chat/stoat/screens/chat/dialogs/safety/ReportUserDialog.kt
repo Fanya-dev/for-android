@@ -26,12 +26,10 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.testTag
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.safety.putUserReport
 import chat.stoat.api.routes.user.blockUser
@@ -39,6 +37,8 @@ import chat.stoat.core.model.schemas.UserReportReason
 import chat.stoat.composables.generic.FormTextField
 import chat.stoat.composables.screens.settings.UserOverview
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_check_24dp
+import chat.stoat.shared.resources.ic_error_24dp
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.report_block_no
 import chat.stoat.shared.resources.report_block_question
@@ -65,6 +65,7 @@ import chat.stoat.shared.resources.report_user_heading
 import chat.stoat.shared.resources.report_user_preview
 import chat.stoat.shared.resources.unknown
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class UserReportFlowState {
@@ -260,7 +261,7 @@ fun ReportUserDialog(onDismiss: () -> Unit, userId: String) {
                 },
                 icon = {
                     Icon(
-                        painter = painterResource(R.drawable.ic_check_24dp),
+                        painter = painterResource(Res.drawable.ic_check_24dp),
                         contentDescription = null, // decorative
                         tint = MaterialTheme.colorScheme.primary
                     )
@@ -327,7 +328,7 @@ fun ReportUserDialog(onDismiss: () -> Unit, userId: String) {
                 },
                 icon = {
                     Icon(
-                        painter = painterResource(R.drawable.ic_error_24dp),
+                        painter = painterResource(Res.drawable.ic_error_24dp),
                         contentDescription = null, // decorative
                         tint = MaterialTheme.colorScheme.primary
                     )

@@ -19,17 +19,19 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.activities.StoatTweenColour
 import chat.stoat.activities.StoatTweenDp
 import chat.stoat.internals.server.PermissionOverrideValue
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_check_24dp
+import chat.stoat.shared.resources.ic_close_24dp
+import chat.stoat.shared.resources.ic_remove_24dp
 import chat.stoat.shared.resources.permission_allow
 import chat.stoat.shared.resources.permission_deny
 import chat.stoat.shared.resources.permission_neutral
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 private val PermissionOverrideOptions = listOf(
@@ -121,9 +123,9 @@ private fun PermissionOverrideOption(
         }
     )
     val icon = when (option) {
-        PermissionOverrideValue.Allow -> R.drawable.ic_check_24dp
-        PermissionOverrideValue.Neutral -> R.drawable.ic_remove_24dp
-        PermissionOverrideValue.Deny -> R.drawable.ic_close_24dp
+        PermissionOverrideValue.Allow -> Res.drawable.ic_check_24dp
+        PermissionOverrideValue.Neutral -> Res.drawable.ic_remove_24dp
+        PermissionOverrideValue.Deny -> Res.drawable.ic_close_24dp
     }
 
     Box(

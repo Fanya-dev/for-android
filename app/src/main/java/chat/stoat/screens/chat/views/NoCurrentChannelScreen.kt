@@ -20,17 +20,17 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.internals.extensions.zero
 import chat.stoat.screens.chat.LocalIsConnected
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_menu_24dp
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.no_active_channel
 import chat.stoat.shared.resources.no_active_channel_body
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -56,7 +56,7 @@ fun NoCurrentChannelScreen(useDrawer: Boolean, onDrawerClicked: () -> Unit) {
                                 onDrawerClicked()
                             }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_menu_24dp),
+                                    painter = painterResource(Res.drawable.ic_menu_24dp),
                                     contentDescription = stringResource(Res.string.menu)
                                 )
                             }

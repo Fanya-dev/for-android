@@ -28,9 +28,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.composables.generic.ControlledSlider
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.corner_radius_picker_choose_radius
@@ -40,6 +38,11 @@ import chat.stoat.shared.resources.corner_radius_picker_circular
 import chat.stoat.shared.resources.corner_radius_picker_other
 import chat.stoat.shared.resources.corner_radius_picker_rounded
 import chat.stoat.shared.resources.corner_radius_picker_sharp
+import chat.stoat.shared.resources.ux_corner_circular
+import chat.stoat.shared.resources.ux_corner_other
+import chat.stoat.shared.resources.ux_corner_rounded
+import chat.stoat.shared.resources.ux_corner_sharp
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 enum class CornerRadiusPreset(val percentage: Int) {
@@ -124,7 +127,7 @@ fun CornerRadiusPicker(percentage: Int, onUpdate: (Int) -> Unit, modifier: Modif
             onSelect = {
                 onUpdate(CornerRadiusPreset.SHARP.percentage)
             },
-            icon = painterResource(R.drawable.ux_corner_sharp),
+            icon = painterResource(Res.drawable.ux_corner_sharp),
             label = stringResource(Res.string.corner_radius_picker_sharp),
         )
         CornerRadiusPickerElement(
@@ -132,7 +135,7 @@ fun CornerRadiusPicker(percentage: Int, onUpdate: (Int) -> Unit, modifier: Modif
             onSelect = {
                 onUpdate(CornerRadiusPreset.ROUNDED.percentage)
             },
-            icon = painterResource(R.drawable.ux_corner_rounded),
+            icon = painterResource(Res.drawable.ux_corner_rounded),
             label = stringResource(Res.string.corner_radius_picker_rounded),
         )
         CornerRadiusPickerElement(
@@ -140,7 +143,7 @@ fun CornerRadiusPicker(percentage: Int, onUpdate: (Int) -> Unit, modifier: Modif
             onSelect = {
                 onUpdate(CornerRadiusPreset.CIRCULAR.percentage)
             },
-            icon = painterResource(R.drawable.ux_corner_circular),
+            icon = painterResource(Res.drawable.ux_corner_circular),
             label = stringResource(Res.string.corner_radius_picker_circular),
         )
         CornerRadiusPickerElement(
@@ -148,7 +151,7 @@ fun CornerRadiusPicker(percentage: Int, onUpdate: (Int) -> Unit, modifier: Modif
             onSelect = {
                 showOtherModal = true
             },
-            icon = painterResource(R.drawable.ux_corner_other),
+            icon = painterResource(Res.drawable.ux_corner_other),
             label = if (percentage !in CornerRadiusPreset.entries.map { it.percentage }) {
                 percentage.toString()
             } else stringResource(Res.string.corner_radius_picker_other),

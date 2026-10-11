@@ -55,14 +55,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.PermissionBit
 import chat.stoat.api.internals.hasPermission
@@ -81,6 +79,8 @@ import chat.stoat.screens.settings.SettingsListItem
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_mood_24dp
 import chat.stoat.shared.resources.server_settings_emojis
 import chat.stoat.shared.resources.server_settings_emojis_add
 import chat.stoat.shared.resources.server_settings_emojis_animated_too_large
@@ -119,6 +119,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.jetbrains.compose.resources.getString
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import org.koin.androidx.compose.koinViewModel
 import java.io.File
@@ -543,7 +544,7 @@ fun ServerSettingsEmojis(
                     },
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_add_24dp),
+                        painter = painterResource(Res.drawable.ic_add_24dp),
                         contentDescription = stringResource(Res.string.server_settings_emojis_add),
                     )
                 }
@@ -617,7 +618,7 @@ private fun EmojiList(
         if (emojis.isEmpty()) {
             item(key = "empty") {
                 ServerSettingsEmptyState(
-                    icon = R.drawable.ic_mood_24dp,
+                    icon = Res.drawable.ic_mood_24dp,
                     title = Res.string.server_settings_emojis_empty_title,
                     description = Res.string.server_settings_emojis_empty,
                 )
@@ -700,7 +701,7 @@ private fun CreateEmojiSheet(
                     verticalArrangement = Arrangement.spacedBy(8.dp),
                 ) {
                     Icon(
-                        painter = painterResource(R.drawable.ic_add_24dp),
+                        painter = painterResource(Res.drawable.ic_add_24dp),
                         contentDescription = null,
                     )
                     Text(

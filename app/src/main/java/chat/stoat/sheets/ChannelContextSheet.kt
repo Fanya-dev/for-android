@@ -13,10 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.unit.dp
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.composables.generic.SheetButton
 
@@ -25,7 +23,10 @@ import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.channel_context_sheet_actions_copy_id
 import chat.stoat.shared.resources.channel_context_sheet_actions_copy_id_copied
 import chat.stoat.shared.resources.channel_context_sheet_actions_mark_read
+import chat.stoat.shared.resources.ic_identifier_copy_24dp
+import chat.stoat.shared.resources.ic_mark_chat_read_24dp
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -56,7 +57,7 @@ fun ChannelContextSheet(channelId: String, onHideSheet: suspend () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(id = R.drawable.ic_identifier_copy_24dp),
+                painter = painterResource(Res.drawable.ic_identifier_copy_24dp),
                 contentDescription = null
             )
         },
@@ -87,7 +88,7 @@ fun ChannelContextSheet(channelId: String, onHideSheet: suspend () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(id = R.drawable.ic_mark_chat_read_24dp),
+                painter = painterResource(Res.drawable.ic_mark_chat_read_24dp),
                 contentDescription = null
             )
         },

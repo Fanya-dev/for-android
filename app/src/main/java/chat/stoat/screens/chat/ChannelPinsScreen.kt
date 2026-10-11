@@ -34,7 +34,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
@@ -42,7 +41,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.channel.searchChannel
 import chat.stoat.composables.chat.SystemMessage
@@ -50,10 +48,12 @@ import chat.stoat.core.model.schemas.Message
 import chat.stoat.internals.extensions.zero
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import chat.stoat.shared.resources.pinned_messages
 import chat.stoat.shared.resources.pinned_messages_empty
 import chat.stoat.shared.resources.tap_to_retry
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 class ChannelPinsScreenViewModel : ViewModel() {
@@ -133,7 +133,7 @@ fun ChannelPinsScreen(
                             navController.popBackStack()
                         }) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                 contentDescription = stringResource(Res.string.back)
                             )
                         }

@@ -24,15 +24,15 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.input.nestedscroll.nestedScroll
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.composables.generic.ListHeader
 import chat.stoat.composables.generic.RadioItem
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
+import chat.stoat.shared.resources.ic_arrow_back_24dp
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 import kotlin.enums.EnumEntries
 
@@ -118,7 +118,7 @@ fun SettingsPage(
                             onNavigateBack?.invoke() ?: navController.popBackStack()
                         }) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_arrow_back_24dp),
+                                painter = painterResource(Res.drawable.ic_arrow_back_24dp),
                                 contentDescription = stringResource(Res.string.back)
                             )
                         }

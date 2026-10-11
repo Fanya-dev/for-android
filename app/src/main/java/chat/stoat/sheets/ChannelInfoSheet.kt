@@ -22,10 +22,8 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.window.Dialog
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.ChannelUtils
 import chat.stoat.api.internals.PermissionBit
@@ -43,10 +41,16 @@ import chat.stoat.shared.resources.channel_info_sheet_options_add
 import chat.stoat.shared.resources.channel_info_sheet_options_invite
 import chat.stoat.shared.resources.channel_info_sheet_options_members
 import chat.stoat.shared.resources.channel_info_sheet_options_notifications_manage
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_list_24dp
+import chat.stoat.shared.resources.ic_notification_settings_24dp
+import chat.stoat.shared.resources.ic_pinboard_24dp
+import chat.stoat.shared.resources.ic_settings_24dp
 import chat.stoat.shared.resources.pinned_messages_view
 import chat.stoat.shared.resources.settings
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -130,7 +134,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
                 },
                 leadingContent = {
                     Icon(
-                        painter = painterResource(R.drawable.ic_list_24dp),
+                        painter = painterResource(Res.drawable.ic_list_24dp),
                         contentDescription = null
                     )
                 },
@@ -159,7 +163,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
                     },
                     leadingContent = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_add_24dp),
+                            painter = painterResource(Res.drawable.ic_add_24dp),
                             contentDescription = null
                         )
                     },
@@ -178,7 +182,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
                     },
                     leadingContent = {
                         Icon(
-                            painter = painterResource(R.drawable.ic_add_24dp),
+                            painter = painterResource(Res.drawable.ic_add_24dp),
                             contentDescription = null
                         )
                     },
@@ -199,7 +203,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(R.drawable.ic_notification_settings_24dp),
+                painter = painterResource(Res.drawable.ic_notification_settings_24dp),
                 contentDescription = null
             )
         },
@@ -214,7 +218,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
         },
         leadingContent = {
             Icon(
-                painter = painterResource(R.drawable.ic_pinboard_24dp),
+                painter = painterResource(Res.drawable.ic_pinboard_24dp),
                 contentDescription = null
             )
         },
@@ -240,7 +244,7 @@ fun ChannelInfoSheet(channelId: String, onHideSheet: suspend () -> Unit) {
             },
             leadingContent = {
                 Icon(
-                    painter = painterResource(R.drawable.ic_settings_24dp),
+                    painter = painterResource(Res.drawable.ic_settings_24dp),
                     contentDescription = null
                 )
             },

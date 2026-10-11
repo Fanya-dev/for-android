@@ -5,7 +5,6 @@
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:windowBackground">@color/background</item>
-        <item name="textAppearanceTitleLarge">@style/TextAppearance.Stoat.TitleLarge</item>
     </style>
 
     <!-- We temporarily don't use a dedicated splash screen theme due to Samsung specific issues.
@@ -14,14 +13,5 @@
         <item name="windowSplashScreenAnimatedIcon">@drawable/ic_launcher_foreground</item>
         <item name="windowSplashScreenBackground">@color/splashscreen_background</item>
         <item name="postSplashScreenTheme">@style/Theme.Stoat</item>
-    </style>
-
-    <style name="TextAppearance.Stoat.TitleLarge" parent="TextAppearance.Material3.TitleLarge">
-        <item name="fontFamily">@font/inter_display_semibold</item>
-        <item name="android:fontFamily">@font/inter_display_semibold</item>
-    </style>
-
-    <style name="Widget.Stoat.Toolbar" parent="Widget.Material3.Toolbar">
-        <item name="titleTextAppearance">@style/TextAppearance.Stoat.TitleLarge</item>
     </style>
 </resources>

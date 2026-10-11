@@ -75,7 +75,6 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalHapticFeedback
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -84,7 +83,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.zIndex
 import androidx.navigation.NavController
-import chat.stoat.R
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.CategorisedChannelList
 import chat.stoat.api.internals.ChannelUtils
@@ -121,6 +119,16 @@ import chat.stoat.shared.resources.direct_messages
 import chat.stoat.shared.resources.discover_alt
 import chat.stoat.shared.resources.friends
 import chat.stoat.shared.resources.geogate_channel_icon_alt
+import chat.stoat.shared.resources.ic_add_24dp
+import chat.stoat.shared.resources.ic_explore_24dp
+import chat.stoat.shared.resources.ic_grid_3x3_off_24dp
+import chat.stoat.shared.resources.ic_group_24dp
+import chat.stoat.shared.resources.ic_more_vert_24dp
+import chat.stoat.shared.resources.ic_screen_share_24dp
+import chat.stoat.shared.resources.ic_settings_24dp
+import chat.stoat.shared.resources.ic_star_shine_24dp
+import chat.stoat.shared.resources.ic_verified_24dp__fill
+import chat.stoat.shared.resources.ic_workspace_premium_24dp__fill
 import chat.stoat.shared.resources.menu
 import chat.stoat.shared.resources.no_channels_body
 import chat.stoat.shared.resources.no_channels_heading
@@ -144,6 +152,7 @@ import kotlinx.coroutines.supervisorScope
 import logcat.LogPriority
 import logcat.asLog
 import logcat.logcat
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -540,7 +549,7 @@ fun ChannelSideDrawer(
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_add_24dp),
+                            painter = painterResource(Res.drawable.ic_add_24dp),
                             contentDescription = stringResource(Res.string.server_plus_alt)
                         )
                     }
@@ -559,7 +568,7 @@ fun ChannelSideDrawer(
                         contentAlignment = Alignment.Center
                     ) {
                         Icon(
-                            painter = painterResource(R.drawable.ic_explore_24dp),
+                            painter = painterResource(Res.drawable.ic_explore_24dp),
                             contentDescription = stringResource(Res.string.discover_alt)
                         )
                     }
@@ -582,7 +591,7 @@ fun ChannelSideDrawer(
                             contentAlignment = Alignment.Center
                         ) {
                             Icon(
-                                painter = painterResource(R.drawable.ic_settings_24dp),
+                                painter = painterResource(Res.drawable.ic_settings_24dp),
                                 contentDescription = stringResource(Res.string.settings)
                             )
                         }
@@ -665,7 +674,7 @@ fun ChannelSideDrawer(
                             if (server?.flags has ServerFlags.Official) {
                                 Icon(
                                     painter = painterResource(
-                                        id = R.drawable.ic_workspace_premium_24dp__fill
+                                        Res.drawable.ic_workspace_premium_24dp__fill
                                     ),
                                     contentDescription = stringResource(
                                         Res.string.server_flag_official
@@ -678,7 +687,7 @@ fun ChannelSideDrawer(
                             if (server?.flags has ServerFlags.Verified) {
                                 Icon(
                                     painter = painterResource(
-                                        id = R.drawable.ic_verified_24dp__fill
+                                        Res.drawable.ic_verified_24dp__fill
                                     ),
                                     contentDescription = stringResource(
                                         Res.string.server_flag_verified
@@ -705,7 +714,7 @@ fun ChannelSideDrawer(
                                 server?.id?.let { srvId -> onShowServerContextSheet(srvId) }
                             }) {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_more_vert_24dp),
+                                    painter = painterResource(Res.drawable.ic_more_vert_24dp),
                                     contentDescription = stringResource(Res.string.menu),
                                     tint = LocalContentColor.current
                                 )
@@ -769,7 +778,7 @@ fun ColumnScope.DirectMessagesChannelListRenderer(
                     name = stringResource(Res.string.overview_screen_title),
                     channelType = ChannelType.TextChannel
                 ),
-                iconType = ChannelItemIconType.Painter(painterResource(R.drawable.ic_star_shine_24dp)),
+                iconType = ChannelItemIconType.Painter(painterResource(Res.drawable.ic_star_shine_24dp)),
                 isCurrent = currentDestination is ChatRouterDestination.Overview,
                 onDestinationChanged = {
                     onDestinationChanged(ChatRouterDestination.Overview)
@@ -790,7 +799,7 @@ fun ColumnScope.DirectMessagesChannelListRenderer(
                     name = stringResource(Res.string.friends),
                     channelType = ChannelType.TextChannel
                 ),
-                iconType = ChannelItemIconType.Painter(painterResource(R.drawable.ic_group_24dp)),
+                iconType = ChannelItemIconType.Painter(painterResource(Res.drawable.ic_group_24dp)),
                 isCurrent = currentDestination is ChatRouterDestination.Friends,
                 onDestinationChanged = {
                     onDestinationChanged(ChatRouterDestination.Friends)
@@ -1066,7 +1075,7 @@ fun ChannelItem(
                             GeoStateProvider.geoState?.isAgeRestrictedGeo == true &&
                                     channel.nsfw == true -> {
                                 Icon(
-                                    painter = painterResource(R.drawable.ic_grid_3x3_off_24dp),
+                                    painter = painterResource(Res.drawable.ic_grid_3x3_off_24dp),
                                     contentDescription = stringResource(Res.string.geogate_channel_icon_alt),
                                 )
                             }
@@ -1228,7 +1237,7 @@ private fun VoiceChannelParticipantRow(
         )
         if (state.screensharing) {
             Icon(
-                painter = painterResource(R.drawable.ic_screen_share_24dp),
+                painter = painterResource(Res.drawable.ic_screen_share_24dp),
                 contentDescription = stringResource(Res.string.voice_screen_sharing),
                 tint = MaterialTheme.colorScheme.primary,
                 modifier = Modifier.size(16.dp)
