@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
@@ -13,17 +14,18 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import chat.stoat.R
 import chat.stoat.shared.resources.Res
+import chat.stoat.shared.resources.ic_plumbing_24dp
 import chat.stoat.shared.resources.spark_early_access
 import chat.stoat.shared.resources.spark_early_access_cta
 import chat.stoat.shared.resources.spark_early_access_description_1
 import chat.stoat.shared.resources.spark_early_access_description_2
-import chat.stoat.shared.resources.spark_early_access_description_3
+import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 
 @Composable
@@ -38,11 +40,12 @@ fun EarlyAccessSheet(onClose: () -> Unit) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
-            painter = painterResource(R.drawable.ux_early_access),
+            painter = painterResource(Res.drawable.ic_plumbing_24dp),
             contentDescription = null,
+            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary),
             modifier = Modifier
-                .fillMaxWidth(0.5f)
                 .padding(vertical = 8.dp)
+                .size(64.dp)
         )
         Text(
             stringResource(Res.string.spark_early_access),
@@ -59,13 +62,14 @@ fun EarlyAccessSheet(onClose: () -> Unit) {
             style = MaterialTheme.typography.bodyLarge,
             textAlign = TextAlign.Center
         )
-        Text(
-            stringResource(Res.string.spark_early_access_description_3),
-            style = MaterialTheme.typography.bodyLarge,
-            textAlign = TextAlign.Center
-        )
         TextButton(onClick = onClose, modifier = Modifier.fillMaxWidth()) {
             Text(stringResource(Res.string.spark_early_access_cta))
         }
     }
+}
+
+@Preview(showBackground = true)
+@Composable
+private fun EarlyAccessSheetPreview() {
+    EarlyAccessSheet { }
 }

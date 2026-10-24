@@ -13,13 +13,12 @@ import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.SpanStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import chat.stoat.BuildConfig
-import chat.stoat.R
+import chat.stoat.composables.vectorassets.NotificationRationale
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.spark_notifications_rationale
 import chat.stoat.shared.resources.spark_notifications_rationale_cta
@@ -42,7 +41,7 @@ fun NotificationRationaleDialog(
                 verticalArrangement = Arrangement.spacedBy(16.dp)
             ) {
                 Image(
-                    painter = painterResource(R.drawable.ux_notification_rationale),
+                    imageVector = NotificationRationale,
                     contentDescription = null,
                     modifier = Modifier
                         .widthIn(max = 200.dp)

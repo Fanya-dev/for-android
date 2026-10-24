@@ -63,7 +63,6 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import androidx.navigation.compose.currentBackStackEntryAsState
-import chat.stoat.BuildConfig
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.internals.DirectMessages
 import chat.stoat.api.realtime.DisconnectionState
@@ -73,16 +72,16 @@ import chat.stoat.api.routes.microservices.gazette.getLatestChangelog
 import chat.stoat.api.routes.push.subscribePush
 import chat.stoat.api.routes.user.fetchSelf
 import chat.stoat.api.settings.Experiments
-import chat.stoat.core.model.data.STOAT_FILES
-import chat.stoat.core.model.schemas.User
 import chat.stoat.api.settings.SyncedSettings
+import chat.stoat.c2dm.NotificationDeepLink
 import chat.stoat.callbacks.Action
 import chat.stoat.callbacks.ActionChannel
 import chat.stoat.composables.chat.DisconnectedNotice
 import chat.stoat.composables.screens.chat.drawer.ChannelSideDrawer
+import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.ReleaseNotesSettings
+import chat.stoat.core.model.schemas.User
 import chat.stoat.dialogs.NotificationRationaleDialog
-import chat.stoat.c2dm.NotificationDeepLink
 import chat.stoat.internals.StoatWebLink
 import chat.stoat.internals.extensions.zero
 import chat.stoat.persistence.KVStorage
@@ -183,7 +182,9 @@ class ChatRouterViewModel(
             runCatching { fetchSelf() }.getOrNull()?.let { user ->
                 kvStorage.set("selfId", user.id ?: "")
                 kvStorage.set("selfName", User.resolveDefaultName(user))
-                kvStorage.set("selfAvatarUrl", user.avatar?.id?.let { "$STOAT_FILES/avatars/$it" } ?: "")
+                kvStorage.set(
+                    "selfAvatarUrl",
+                    user.avatar?.id?.let { "$STOAT_FILES/avatars/$it" } ?: "")
             }
 
             val pendingNavigation = NotificationDeepLink.pendingNavigation.value
