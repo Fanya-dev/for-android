@@ -1,4 +1,4 @@
-package chat.stoat.ui.theme
+package chat.stoat.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

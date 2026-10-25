@@ -64,6 +64,7 @@ import chat.stoat.composables.screens.chat.AttachmentManager
 import chat.stoat.composables.screens.chat.drawer.ChannelItem
 import chat.stoat.composables.screens.chat.drawer.ChannelItemIconType
 import chat.stoat.composables.screens.chat.drawer.DMOrGroupItem
+import chat.stoat.core.designsystem.theme.StoatTheme
 import chat.stoat.core.model.schemas.ChannelType
 import chat.stoat.internals.extensions.getStringBlocking
 import chat.stoat.persistence.KVStorage
@@ -74,7 +75,6 @@ import chat.stoat.shared.resources.share_target_invalid_intent
 import chat.stoat.shared.resources.share_target_login_first
 import chat.stoat.shared.resources.share_target_search_channels
 import chat.stoat.shared.resources.share_target_select_channel
-import chat.stoat.ui.theme.StoatTheme
 import io.ktor.http.ContentType
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString

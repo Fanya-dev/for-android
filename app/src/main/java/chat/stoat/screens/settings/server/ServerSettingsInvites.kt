@@ -68,6 +68,7 @@ import chat.stoat.api.routes.invites.fetchServerInvites
 import chat.stoat.api.routes.user.fetchUser
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.composables.settings.ServerSettingsEmptyState
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_INVITES
 import chat.stoat.core.model.schemas.Channel
 import chat.stoat.core.model.schemas.ChannelType
@@ -106,7 +107,6 @@ import chat.stoat.shared.resources.server_settings_invites_no_channels
 import chat.stoat.shared.resources.server_settings_invites_retry
 import chat.stoat.shared.resources.server_settings_invites_unknown_channel
 import chat.stoat.shared.resources.server_settings_invites_unknown_user
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.async
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.coroutineScope

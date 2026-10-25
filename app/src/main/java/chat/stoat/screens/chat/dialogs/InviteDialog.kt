@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import chat.stoat.api.StoatAPI
 import chat.stoat.api.routes.channel.createInvite
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_INVITES
 import chat.stoat.internals.Platform
 import chat.stoat.shared.resources.Res
@@ -51,7 +52,6 @@ import chat.stoat.shared.resources.invite_dialog_copy
 import chat.stoat.shared.resources.invite_dialog_description
 import chat.stoat.shared.resources.invite_dialog_header
 import chat.stoat.shared.resources.unknown
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay

@@ -39,6 +39,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.core.view.WindowCompat
 import chat.stoat.api.StoatHttp
 import chat.stoat.api.StoatJson
+import chat.stoat.core.designsystem.theme.StoatTheme
 import chat.stoat.core.model.schemas.AutumnResource
 import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.api.settings.SyncedSettings
@@ -56,7 +57,6 @@ import chat.stoat.shared.resources.media_viewer_share_image
 import chat.stoat.shared.resources.media_viewer_share_url
 import chat.stoat.shared.resources.media_viewer_title_image
 import chat.stoat.shared.resources.share
-import chat.stoat.ui.theme.StoatTheme
 import io.ktor.client.request.get
 import io.ktor.client.statement.readBytes
 import kotlinx.coroutines.launch

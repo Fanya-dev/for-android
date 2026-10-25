@@ -77,6 +77,8 @@ import chat.stoat.api.routes.server.setServerRolePermissions
 import chat.stoat.composables.generic.InlineMediaPicker
 import chat.stoat.composables.generic.PermissionOverridePicker
 import chat.stoat.composables.server.RoleColourIndicator
+import chat.stoat.core.designsystem.theme.DarkColorScheme
+import chat.stoat.core.designsystem.theme.LightColorScheme
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.PermissionDescription
 import chat.stoat.core.model.schemas.Role
@@ -130,8 +132,6 @@ import chat.stoat.sheets.ColourPickerSheet
 import chat.stoat.sheets.colourPickerString
 import chat.stoat.sheets.colourPickerValue
 import chat.stoat.ui.colour.BrushCompat
-import chat.stoat.ui.theme.DarkColorScheme
-import chat.stoat.ui.theme.LightColorScheme
 import com.bumptech.glide.integration.compose.CrossFade
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage

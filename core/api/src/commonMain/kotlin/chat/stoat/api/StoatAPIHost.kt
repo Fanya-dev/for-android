@@ -2,8 +2,8 @@ package chat.stoat.api
 
 import app.cash.sqldelight.db.SqlDriver
 import chat.stoat.api.internals.defaultHttpEngine
-import chat.stoat.api.settings.Theme
-import chat.stoat.api.settings.UserInterfaceFont
+import chat.stoat.core.model.settings.Theme
+import chat.stoat.core.model.settings.UserInterfaceFont
 import chat.stoat.persistence.KVStorage
 import io.ktor.client.engine.HttpClientEngine
 

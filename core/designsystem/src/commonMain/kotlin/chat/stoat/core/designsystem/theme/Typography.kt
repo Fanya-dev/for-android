@@ -1,18 +1,14 @@
-package chat.stoat.ui.theme
+package chat.stoat.core.designsystem.theme
 
-import android.os.Build
 import androidx.compose.material3.Typography
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.text.ExperimentalTextApi
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.DeviceFontFamilyName
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import chat.stoat.api.settings.UserInterfaceFont
 import chat.stoat.core.designsystem.resources.Res
 import chat.stoat.core.designsystem.resources.fragmentmono_italic
 import chat.stoat.core.designsystem.resources.fragmentmono_regular
@@ -99,10 +95,10 @@ private val InterDisplay: FontFamily
     )
 val FragmentMono: FontFamily
     @Composable get() = FontFamily(
-        Font(Res.font.fragmentmono_regular, FontWeight.Normal),
-        Font(Res.font.fragmentmono_italic, FontWeight.Normal, FontStyle.Italic),
-        Font(DeviceFontFamilyName("monospace"), FontWeight.Normal, FontStyle.Normal),
-        Font(DeviceFontFamilyName("monospace"), FontWeight.Normal, FontStyle.Italic)
+        listOf(
+            Font(Res.font.fragmentmono_regular, FontWeight.Normal),
+            Font(Res.font.fragmentmono_italic, FontWeight.Normal, FontStyle.Italic),
+        ) + monospaceFallbackFonts
     )
 
 @OptIn(ExperimentalTextApi::class)
@@ -451,10 +447,3 @@ val GoogleTypography: Typography
             fontSize = 12.sp
         )
     )
-
-fun getDefaultFont(): UserInterfaceFont {
-    if (Build.MANUFACTURER == "Google" && Build.MODEL.startsWith("Pixel")) {
-        return UserInterfaceFont.GoogleSansFlex
-    }
-    return UserInterfaceFont.Default
-}

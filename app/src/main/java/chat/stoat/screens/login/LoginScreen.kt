@@ -49,6 +49,7 @@ import chat.stoat.api.routes.account.negotiateAuthentication
 import chat.stoat.api.routes.onboard.needsOnboarding
 import chat.stoat.composables.generic.FormTextField
 import chat.stoat.composables.generic.Weblink
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_WEB_APP
 import chat.stoat.persistence.KVStorage
 import chat.stoat.shared.resources.Res
@@ -64,7 +65,6 @@ import chat.stoat.shared.resources.password_forgot
 import chat.stoat.shared.resources.resend_verification
 import chat.stoat.shared.resources.service_health_alert_body_default
 import chat.stoat.shared.resources.show_password
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource

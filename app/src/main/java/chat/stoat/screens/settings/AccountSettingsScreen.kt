@@ -50,6 +50,7 @@ import chat.stoat.api.routes.account.changeEmail
 import chat.stoat.api.routes.account.changePassword
 import chat.stoat.api.routes.account.fetchAccount
 import chat.stoat.api.routes.account.fetchMfaSettings
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.ic_edit_24dp
@@ -82,7 +83,6 @@ import chat.stoat.shared.resources.settings_account_password_edit_message
 import chat.stoat.shared.resources.settings_account_password_edit_message_hint
 import chat.stoat.shared.resources.settings_account_password_edit_new_password
 import chat.stoat.shared.resources.settings_account_password_edit_title
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource

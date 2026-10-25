@@ -58,6 +58,7 @@ import chat.stoat.composables.sheets.SheetSelection
 import chat.stoat.composables.vectorassets.CreateServer
 import chat.stoat.composables.vectorassets.JoinServer
 import chat.stoat.composables.vectorassets.NewServer
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_WEB_APP
 import chat.stoat.material.EasingTokens
 import chat.stoat.screens.chat.ChatRouterDestination
@@ -85,7 +86,6 @@ import chat.stoat.shared.resources.add_server_sheet_step_1j_label
 import chat.stoat.shared.resources.add_server_sheet_step_1j_title
 import chat.stoat.shared.resources.back
 import chat.stoat.shared.resources.ic_arrow_back_24dp
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import logcat.asLog
 import logcat.logcat

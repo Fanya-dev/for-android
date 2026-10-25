@@ -100,6 +100,7 @@ import chat.stoat.composables.generic.RemoteImage
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.composables.generic.presenceFromStatus
 import chat.stoat.composables.screens.chat.ChannelIcon
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.Category
 import chat.stoat.core.model.schemas.Channel
@@ -145,7 +146,6 @@ import chat.stoat.sheets.ColourPickerSheet
 import chat.stoat.sheets.ServerFolderSheet
 import chat.stoat.sheets.colourPickerString
 import chat.stoat.sheets.colourPickerValue
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.CancellationException
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.supervisorScope

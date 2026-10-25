@@ -56,6 +56,8 @@ import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.callbacks.Action
 import chat.stoat.callbacks.ActionChannel
 import chat.stoat.composables.generic.RemoteImage
+import chat.stoat.core.designsystem.theme.FragmentMono
+import chat.stoat.core.designsystem.theme.isThemeDark
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.User
 import chat.stoat.internals.extensions.isInviteUri
@@ -73,8 +75,6 @@ import chat.stoat.markdown.TIMESTAMP_ELEMENT_TYPE
 import chat.stoat.markdown.USER_MENTION_ELEMENT_TYPE
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.link_type_no_intent
-import chat.stoat.ui.theme.FragmentMono
-import chat.stoat.ui.theme.isThemeDark
 import com.mikepenz.markdown.annotator.DefaultAnnotatorSettings
 import com.mikepenz.markdown.annotator.buildMarkdownAnnotatedString
 import com.mikepenz.markdown.compose.components.markdownComponents

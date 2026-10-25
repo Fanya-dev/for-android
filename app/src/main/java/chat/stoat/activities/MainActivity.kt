@@ -84,6 +84,7 @@ import chat.stoat.c2dm.NotificationDeepLink
 import chat.stoat.composables.generic.HealthAlert
 import chat.stoat.composables.voice.VoicePermissionSwitch
 import chat.stoat.composables.voice.VoiceSheet
+import chat.stoat.core.designsystem.theme.StoatTheme
 import chat.stoat.core.model.schemas.HealthNotice
 import chat.stoat.internals.StoatWebLink
 import chat.stoat.internals.extensions.getStringBlocking
@@ -146,7 +147,6 @@ import chat.stoat.shared.resources.keyboard_shortcut_messaging
 import chat.stoat.shared.resources.keyboard_shortcut_messaging_new_line
 import chat.stoat.shared.resources.keyboard_shortcut_messaging_send_message
 import chat.stoat.shared.resources.rate_limit_toast
-import chat.stoat.ui.theme.StoatTheme
 import chat.stoat.voice.VoiceCallManager
 import io.ktor.client.request.get
 import io.sentry.android.core.SentryAndroid

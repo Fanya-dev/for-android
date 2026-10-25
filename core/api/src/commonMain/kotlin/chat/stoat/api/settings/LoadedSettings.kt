@@ -6,24 +6,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import chat.stoat.api.StoatAPIHost
 import chat.stoat.core.model.schemas.AndroidSpecificSettingsSpecialEmbedSettings
-
-enum class Theme {
-    None,
-    Default,
-    Light,
-    M3Dynamic,
-    Amoled
-}
+import chat.stoat.core.model.settings.Theme
+import chat.stoat.core.model.settings.UserInterfaceFont
 
 enum class MessageReplyStyle {
     None,
     SwipeFromEnd,
     DoubleTap
-}
-
-enum class UserInterfaceFont {
-    Default,
-    GoogleSansFlex,
 }
 
 typealias SpecialEmbedSettings = AndroidSpecificSettingsSpecialEmbedSettings

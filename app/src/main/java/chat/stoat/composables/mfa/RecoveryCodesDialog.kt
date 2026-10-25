@@ -21,6 +21,7 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.internals.Platform
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.copied
@@ -28,7 +29,6 @@ import chat.stoat.shared.resources.settings_mfa_recovery_copy
 import chat.stoat.shared.resources.settings_mfa_recovery_dialog_done
 import chat.stoat.shared.resources.settings_mfa_recovery_dialog_hint
 import chat.stoat.shared.resources.settings_mfa_recovery_dialog_title
-import chat.stoat.ui.theme.FragmentMono
 import org.jetbrains.compose.resources.stringResource
 
 @Composable

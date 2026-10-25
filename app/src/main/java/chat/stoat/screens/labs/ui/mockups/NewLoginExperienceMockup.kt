@@ -36,7 +36,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import chat.stoat.api.settings.LoadedSettings
-import chat.stoat.api.settings.Theme
+import chat.stoat.core.model.settings.Theme
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.login_bg
 import chat.stoat.shared.resources.stoat_wordmark_white

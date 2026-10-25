@@ -49,6 +49,7 @@ import androidx.navigation.NavController
 import chat.stoat.BuildConfig
 import chat.stoat.api.StoatJson
 import chat.stoat.api.routes.misc.getRootRoute
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_BASE
 import chat.stoat.internals.Platform
 import chat.stoat.settings.dsl.SettingsPage
@@ -64,7 +65,6 @@ import chat.stoat.shared.resources.copied
 import chat.stoat.shared.resources.ic_chevron_forward_24dp
 import chat.stoat.shared.resources.ic_content_copy_24dp
 import chat.stoat.shared.resources.stoat_logo_white
-import chat.stoat.ui.theme.FragmentMono
 import kotlinx.coroutines.launch
 import org.jetbrains.compose.resources.getString
 import org.jetbrains.compose.resources.painterResource

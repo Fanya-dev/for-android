@@ -34,7 +34,7 @@ import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.composables.generic.AnyLink
 import chat.stoat.composables.generic.Weblink
 import chat.stoat.core.model.data.STOAT_MARKETING
-import chat.stoat.api.settings.Theme
+import chat.stoat.core.model.settings.Theme
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.community_guidelines
 import chat.stoat.shared.resources.login_bg

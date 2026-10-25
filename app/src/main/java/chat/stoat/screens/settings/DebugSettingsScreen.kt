@@ -45,6 +45,7 @@ import androidx.lifecycle.viewModelScope
 import androidx.navigation.NavController
 import chat.stoat.api.routes.push.subscribePush
 import chat.stoat.api.settings.SyncedSettings
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.dialogs.NotificationRationaleDialog
 import chat.stoat.persistence.Database
 import chat.stoat.persistence.KVStorage
@@ -52,7 +53,6 @@ import chat.stoat.persistence.SqlStorage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.back
 import chat.stoat.shared.resources.ic_arrow_back_24dp
-import chat.stoat.ui.theme.FragmentMono
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailabilityLight
 import com.google.android.gms.tasks.OnCompleteListener

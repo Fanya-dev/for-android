@@ -46,6 +46,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import chat.stoat.composables.generic.NonIdealState
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.cancel
 import chat.stoat.shared.resources.ic_error_24dp
@@ -64,7 +65,6 @@ import chat.stoat.shared.resources.mfa_prompt_no_methods_description
 import chat.stoat.shared.resources.mfa_prompt_no_methods_title
 import chat.stoat.shared.resources.mfa_prompt_retry
 import chat.stoat.shared.resources.mfa_prompt_title
-import chat.stoat.ui.theme.FragmentMono
 import org.jetbrains.compose.resources.painterResource
 import org.jetbrains.compose.resources.stringResource
 

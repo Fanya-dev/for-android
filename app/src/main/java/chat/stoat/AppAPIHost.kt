@@ -7,13 +7,13 @@ import chat.stoat.api.StoatAPIHost
 import chat.stoat.api.StoatAPIPlatform
 import chat.stoat.api.StoatAPIStorage
 import chat.stoat.api.routes.account.MFA_TICKET_HEADER_NAME
-import chat.stoat.api.settings.Theme
-import chat.stoat.api.settings.UserInterfaceFont
 import chat.stoat.c2dm.ChannelRegistrator
+import chat.stoat.core.designsystem.theme.getDefaultFont
+import chat.stoat.core.designsystem.theme.getDefaultTheme
+import chat.stoat.core.model.settings.Theme
+import chat.stoat.core.model.settings.UserInterfaceFont
 import chat.stoat.persistence.KVStorage
 import chat.stoat.persistence.SqlStorage
-import chat.stoat.ui.theme.getDefaultFont
-import chat.stoat.ui.theme.getDefaultTheme
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.chuckerteam.chucker.api.RetentionManager

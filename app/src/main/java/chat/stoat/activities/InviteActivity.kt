@@ -53,6 +53,7 @@ import chat.stoat.api.settings.SyncedSettings
 import chat.stoat.callbacks.ActionChannel
 import chat.stoat.composables.generic.IconPlaceholder
 import chat.stoat.composables.generic.RemoteImage
+import chat.stoat.core.designsystem.theme.StoatTheme
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.Invite
 import chat.stoat.core.model.schemas.InviteJoined
@@ -71,7 +72,6 @@ import chat.stoat.shared.resources.invite_message
 import chat.stoat.shared.resources.invite_open_server
 import chat.stoat.shared.resources.ok
 import chat.stoat.shared.resources.unknown
-import chat.stoat.ui.theme.StoatTheme
 import com.bumptech.glide.integration.compose.ExperimentalGlideComposeApi
 import com.bumptech.glide.integration.compose.GlideImage
 import kotlinx.coroutines.launch

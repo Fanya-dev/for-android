@@ -91,6 +91,7 @@ import chat.stoat.api.StoatJson
 import chat.stoat.api.settings.LoadedSettings
 import chat.stoat.api.settings.SyncedSettings
 import chat.stoat.composables.generic.ControlledSlider
+import chat.stoat.core.designsystem.theme.StoatTheme
 import chat.stoat.core.model.data.STOAT_FILES
 import chat.stoat.core.model.schemas.AutumnResource
 import chat.stoat.internals.extensions.zero
@@ -121,7 +122,6 @@ import chat.stoat.shared.resources.media_viewer_share_video
 import chat.stoat.shared.resources.media_viewer_title_video
 import chat.stoat.shared.resources.retry
 import chat.stoat.shared.resources.share
-import chat.stoat.ui.theme.StoatTheme
 import io.ktor.client.request.get
 import io.ktor.client.statement.readRawBytes
 import kotlinx.coroutines.delay

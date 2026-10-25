@@ -1,25 +1,15 @@
-package chat.stoat.ui.theme
+package chat.stoat.core.designsystem.theme
 
-import android.annotation.SuppressLint
-import android.app.Activity
-import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.ColorScheme
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.toArgb
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.platform.LocalView
-import androidx.core.view.ViewCompat
-import chat.stoat.api.settings.Theme
-import chat.stoat.api.settings.UserInterfaceFont
 import chat.stoat.core.model.data.OverridableColourScheme
+import chat.stoat.core.model.settings.Theme
+import chat.stoat.core.model.settings.UserInterfaceFont
 
 val LightColorScheme = lightColorScheme(
     primary = Colour.PrimaryLight,
@@ -142,19 +132,11 @@ fun getColorScheme(
     requestedTheme: Theme,
     colourOverrides: OverridableColourScheme? = null
 ): ColorScheme {
-    val context = LocalContext.current
-
     val systemInDarkTheme = isSystemInDarkTheme()
     val m3Supported = systemSupportsDynamicColors()
 
     val colorScheme = when {
-        m3Supported && requestedTheme == Theme.M3Dynamic && systemInDarkTheme -> dynamicDarkColorScheme(
-            context
-        )
-
-        m3Supported && requestedTheme == Theme.M3Dynamic && !systemInDarkTheme -> dynamicLightColorScheme(
-            context
-        )
+        m3Supported && requestedTheme == Theme.M3Dynamic -> dynamicColorScheme(systemInDarkTheme)
 
         requestedTheme == Theme.Default -> DarkColorScheme
         requestedTheme == Theme.Light -> LightColorScheme
@@ -174,22 +156,12 @@ fun getColorScheme(
         else -> true
     }
 
-    val view = LocalView.current
-    if (!view.isInEditMode) {
-        SideEffect {
-            val window = (view.context as Activity).window
-            window.statusBarColor = Color.Transparent.toArgb()
-            @Suppress("DEPRECATION")
-            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars =
-                !colorSchemeIsDark
-        }
-    }
+    SystemBarAppearance(isDark = colorSchemeIsDark)
 
     if (colourOverrides == null) return colorScheme
     return colourOverrides.applyTo(colorScheme)
 }
 
-@SuppressLint("NewApi")
 @Composable
 fun StoatTheme(
     requestedTheme: Theme,
@@ -208,10 +180,6 @@ fun StoatTheme(
         typography = typography,
         content = content
     )
-}
-
-fun systemSupportsDynamicColors(): Boolean {
-    return Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
 }
 
 fun getDefaultTheme(): Theme {

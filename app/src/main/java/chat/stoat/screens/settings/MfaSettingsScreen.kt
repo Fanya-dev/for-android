@@ -84,6 +84,7 @@ import chat.stoat.composables.mfa.RecoveryCodesDialog
 import chat.stoat.composables.mfa.mfaErrorText
 import chat.stoat.composables.vectorassets.MfaOff
 import chat.stoat.composables.vectorassets.MfaOn
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.data.STOAT_WEB_APP
 import chat.stoat.internals.Platform
 import chat.stoat.settings.dsl.SettingsPage
@@ -120,7 +121,6 @@ import chat.stoat.shared.resources.settings_mfa_totp_setup_manual
 import chat.stoat.shared.resources.settings_mfa_totp_setup_scan
 import chat.stoat.shared.resources.settings_mfa_totp_setup_title
 import chat.stoat.shared.resources.settings_mfa_totp_setup_verify
-import chat.stoat.ui.theme.FragmentMono
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType
 import com.google.zxing.qrcode.QRCodeWriter

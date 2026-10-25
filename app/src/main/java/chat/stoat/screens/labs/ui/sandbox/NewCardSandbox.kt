@@ -31,10 +31,10 @@ import androidx.constraintlayout.compose.ConstraintLayout
 import androidx.navigation.NavController
 import chat.stoat.api.StoatAPI
 import chat.stoat.composables.generic.UserAvatar
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.settings.dsl.SettingsPage
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.tmp_card_asset_tl
-import chat.stoat.ui.theme.FragmentMono
 import org.jetbrains.compose.resources.painterResource
 import java.text.DateFormat
 import java.util.Date

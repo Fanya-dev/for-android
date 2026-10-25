@@ -52,6 +52,7 @@ import androidx.palette.graphics.Palette
 import chat.stoat.api.internals.ResourceLocations
 import chat.stoat.api.internals.ULID
 import chat.stoat.api.internals.UserQR
+import chat.stoat.core.designsystem.theme.FragmentMono
 import chat.stoat.core.model.schemas.User
 import chat.stoat.composables.generic.UserAvatar
 import chat.stoat.shared.resources.Res
@@ -64,7 +65,6 @@ import chat.stoat.shared.resources.user_card_data_point_qrcode
 import chat.stoat.shared.resources.user_card_data_point_username
 import chat.stoat.shared.resources.usercard_heading
 import chat.stoat.shared.resources.usercard_qr_placeholder
-import chat.stoat.ui.theme.FragmentMono
 import com.bumptech.glide.Glide
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.EncodeHintType

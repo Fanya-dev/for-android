@@ -59,11 +59,11 @@ import androidx.compose.ui.unit.sp
 import chat.stoat.composables.generic.Presence
 import chat.stoat.composables.generic.RemoteImage
 import chat.stoat.composables.generic.presenceColour
+import chat.stoat.core.designsystem.theme.StoatTheme
+import chat.stoat.core.designsystem.theme.getDefaultFont
+import chat.stoat.core.model.settings.Theme
 import chat.stoat.shared.resources.Res
 import chat.stoat.shared.resources.ic_call_24dp__fill
-import chat.stoat.ui.theme.StoatTheme
-import chat.stoat.api.settings.Theme
-import chat.stoat.ui.theme.getDefaultFont
 import kotlinx.coroutines.delay
 import org.jetbrains.compose.resources.painterResource
 import kotlin.math.roundToInt
